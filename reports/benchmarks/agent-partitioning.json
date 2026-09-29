@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:09:34.918Z",
+  "machine": {
+    "platform": "linux",
+    "architecture": "x64",
+    "nodeVersion": "v24.18.0",
+    "cpuCount": 4
+  },
+  "fixtureCount": 6,
+  "fixtures": [
+    {
+      "fixtureId": "cross-package",
+      "behavior": "cross_package",
+      "targets": 5,
+      "relationshipEdges": 2,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 0,
+        "orphanEdgeIds": [
+          "web-imports-shared",
+          "consumer-calls-shared"
+        ]
+      },
+      "topology": {
+        "workUnits": 5,
+        "layers": 3,
+        "internalRelationshipEdges": 0,
+        "cutRelationshipEdges": 2,
+        "relatedEdgeLocalityRatio": 0,
+        "boundaryEdges": 2,
+        "interfaceContracts": 2,
+        "ignoredEdges": [],
+        "omissions": 0,
+        "selectedScaleDistribution": {
+          "small": 2,
+          "medium": 3,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    },
+    {
+      "fixtureId": "cycle",
+      "behavior": "cycle",
+      "targets": 3,
+      "relationshipEdges": 2,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 0,
+        "orphanEdgeIds": [
+          "alpha-calls-beta",
+          "beta-calls-alpha"
+        ]
+      },
+      "topology": {
+        "workUnits": 2,
+        "layers": 2,
+        "internalRelationshipEdges": 2,
+        "cutRelationshipEdges": 0,
+        "relatedEdgeLocalityRatio": 1,
+        "boundaryEdges": 0,
+        "interfaceContracts": 0,
+        "ignoredEdges": [],
+        "omissions": 1,
+        "selectedScaleDistribution": {
+          "small": 1,
+          "medium": 1,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    },
+    {
+      "fixtureId": "independent-leaves",
+      "behavior": "independent_leaves",
+      "targets": 5,
+      "relationshipEdges": 0,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 1,
+        "orphanEdgeIds": []
+      },
+      "topology": {
+        "workUnits": 5,
+        "layers": 2,
+        "internalRelationshipEdges": 0,
+        "cutRelationshipEdges": 0,
+        "relatedEdgeLocalityRatio": 1,
+        "boundaryEdges": 0,
+        "interfaceContracts": 0,
+        "ignoredEdges": [],
+        "omissions": 1,
+        "selectedScaleDistribution": {
+          "small": 4,
+          "medium": 1,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    },
+    {
+      "fixtureId": "parent-integration",
+      "behavior": "parent_integration",
+      "targets": 3,
+      "relationshipEdges": 1,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 0,
+        "orphanEdgeIds": [
+          "parse-flows-format"
+        ]
+      },
+      "topology": {
+        "workUnits": 2,
+        "layers": 2,
+        "internalRelationshipEdges": 1,
+        "cutRelationshipEdges": 0,
+        "relatedEdgeLocalityRatio": 1,
+        "boundaryEdges": 0,
+        "interfaceContracts": 0,
+        "ignoredEdges": [],
+        "omissions": 1,
+        "selectedScaleDistribution": {
+          "small": 1,
+          "medium": 1,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    },
+    {
+      "fixtureId": "same-file-functions",
+      "behavior": "same_file_functions",
+      "targets": 3,
+      "relationshipEdges": 0,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 1,
+        "orphanEdgeIds": []
+      },
+      "topology": {
+        "workUnits": 2,
+        "layers": 2,
+        "internalRelationshipEdges": 0,
+        "cutRelationshipEdges": 0,
+        "relatedEdgeLocalityRatio": 1,
+        "boundaryEdges": 0,
+        "interfaceContracts": 0,
+        "ignoredEdges": [],
+        "omissions": 1,
+        "selectedScaleDistribution": {
+          "small": 1,
+          "medium": 1,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    },
+    {
+      "fixtureId": "shared-interface",
+      "behavior": "shared_interface",
+      "targets": 3,
+      "relationshipEdges": 1,
+      "legacy": {
+        "chunks": 4,
+        "coLocatedRelationshipEdges": 0,
+        "endpointCoLocationRatio": 0,
+        "orphanEdgeIds": [
+          "producer-consumer-call"
+        ]
+      },
+      "topology": {
+        "workUnits": 2,
+        "layers": 2,
+        "internalRelationshipEdges": 1,
+        "cutRelationshipEdges": 0,
+        "relatedEdgeLocalityRatio": 1,
+        "boundaryEdges": 0,
+        "interfaceContracts": 0,
+        "ignoredEdges": [],
+        "omissions": 1,
+        "selectedScaleDistribution": {
+          "small": 1,
+          "medium": 1,
+          "large": 0
+        }
+      },
+      "validation": {
+        "uniqueTargetOwnership": true,
+        "completeBoundaryCoverage": true,
+        "acyclicDependencies": true,
+        "deterministicOutput": true
+      }
+    }
+  ],
+  "summary": {
+    "relationshipEdges": 6,
+    "legacyCoLocatedRelationshipEdges": 0,
+    "topologyInternalRelationshipEdges": 4,
+    "legacyEndpointCoLocationRatio": 0,
+    "topologyRelatedEdgeLocalityRatio": 0.6666666666666666,
+    "localityImprovementPercentagePoints": 66.66666666666666,
+    "boundaryEdges": 2,
+    "interfaceContracts": 2,
+    "ignoredEdges": 0,
+    "allTargetsUniquelyOwned": true,
+    "allBoundaryEdgesCovered": true,
+    "allDependencyGraphsAcyclic": true,
+    "allOutputsDeterministic": true
+  },
+  "limitations": [
+    "This MA-2 benchmark measures deterministic partition structure and fixture locality; it does not invoke providers or claim production scheduling speedup.",
+    "The topology metric covers relationship edges whose endpoints are task-owned; omissions remain explicit and are not counted as successful localization.",
+    "The six-fixture corpus is a regression benchmark, not a representative production-quality distribution."
+  ]
+}

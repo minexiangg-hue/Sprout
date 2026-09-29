@@ -1,0 +1,5 @@
+{
+  "originalProjectId": "fbd382ab-88e7-48dc-9774-8a049b6d492a",
+  "moduleId": "timer-engine",
+  "instruction": "保留当前计时器所有开始、暂停、重置、归零反馈及 window.SPROUT_TIMER 和 sprout:timer-update 接口。只修改当前 JavaScript 模块，动态创建一个 <button id=\"add-minute\" type=\"button\">加一分钟</button> 放在重置按钮旁（如果该 id 已存在则复用）。运行中和暂停中点击此按钮时，都给剩余时间增加60秒，并保持原来的运行或暂停状态不变。重置仍恢复配置初始时长，其他模块无需改动。"
+}

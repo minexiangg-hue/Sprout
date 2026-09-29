@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:27:41.519Z",
+  "name": "Studio revised timer browser check",
+  "originalProjectId": "fbd382ab-88e7-48dc-9774-8a049b6d492a",
+  "artifactSha256": "3ad380af29774530fd2d59b3a3895f36b7f5f6df87a93565aad1a68c7284b20f",
+  "providerCalls": 0,
+  "browser": "Chromium",
+  "sandbox": "allow-scripts",
+  "controlledClock": true,
+  "harnessNote": "An initial role-name selector incorrectly required the accessible name to equal visible text; generated button has a longer descriptive aria-label. The final check validates the explicitly requested id and visible text. Original failure is retained; generated source and model calls were unchanged.",
+  "checks": [
+    {
+      "name": "initial-value",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "original-countdown-works",
+      "passed": true,
+      "evidence": "04:58"
+    },
+    {
+      "name": "requested-button-id-and-visible-text",
+      "passed": true,
+      "evidence": {
+        "id": "add-minute",
+        "text": "加一分钟"
+      }
+    },
+    {
+      "name": "paused-adds-60-seconds",
+      "passed": true,
+      "evidence": "05:58"
+    },
+    {
+      "name": "add-preserves-paused-state",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "resume-after-paused-add",
+      "passed": true,
+      "evidence": "05:57"
+    },
+    {
+      "name": "running-adds-60-seconds",
+      "passed": true,
+      "evidence": "06:57"
+    },
+    {
+      "name": "add-preserves-running-state",
+      "passed": true,
+      "evidence": "06:56"
+    },
+    {
+      "name": "reset-restores-original-duration",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "reset-stays-stopped",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "completion-reaches-zero",
+      "passed": true,
+      "evidence": "00:00"
+    },
+    {
+      "name": "completion-feedback-preserved",
+      "passed": true,
+      "evidence": "任务完成"
+    },
+    {
+      "name": "replay-after-completion",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "no-runtime-errors",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no-network-requests",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "passed": true
+}

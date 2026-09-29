@@ -1,0 +1,78 @@
+
+> test
+> react-scripts test --env=jsdom --watchAll=false --testPathPattern src/react/blogging --runInBand --json --outputFile /home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/official-layout.json
+
+
+FAIL src/react/blogging/addCanonicalUrl.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'
+
+    Require stack:
+      node_modules/react-router-dom/dist/index.js
+      src/react/blogging/addCanonicalUrl.test.js
+
+      1 | import React from 'react';
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+    > 3 | import { MemoryRouter } from 'react-router-dom';
+        | ^
+      4 | import fetchMock from 'fetch-mock';
+      5 | import '@testing-library/jest-dom';
+      6 | import CMS from './addCanonicalUrl';
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)
+      at Object.<anonymous> (src/react/blogging/addCanonicalUrl.test.js:3:1)
+
+FAIL src/react/blogging/addAltTextToImage.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'
+
+    Require stack:
+      node_modules/react-router-dom/dist/index.js
+      src/react/blogging/addAltTextToImage.test.js
+
+      1 | import React from 'react';
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+    > 3 | import { MemoryRouter } from 'react-router-dom';
+        | ^
+      4 | import fetchMock from 'fetch-mock';
+      5 | import '@testing-library/jest-dom';
+      6 | import CMS from './AddAltTextToImage';
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)
+      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:3:1)
+
+FAIL src/react/blogging/addComment.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'
+
+    Require stack:
+      node_modules/react-router-dom/dist/index.js
+      src/react/blogging/addComment.test.js
+
+      1 | import React from 'react';
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+    > 3 | import { MemoryRouter } from 'react-router-dom';
+        | ^
+      4 | import fetchMock from 'fetch-mock';
+      5 | import '@testing-library/jest-dom';
+      6 | import App from './addComment';
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)
+      at Object.<anonymous> (src/react/blogging/addComment.test.js:3:1)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+Test Suites: 3 failed, 3 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        1.889 s
+Ran all test suites matching /src\/react\/blogging/i.
+Test results written to: ../../../home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/official-layout.json

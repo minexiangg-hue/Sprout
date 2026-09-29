@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T13:58:14.224Z",
+  "upstream": "https://github.com/JustinLinKK/graph-code",
+  "upstreamCommit": "423912335b494ed259a0432f64334873dc461e7e",
+  "method": "Git object bytes vs current filesystem SHA-256; every originally tracked file under four packages and both application src trees, plus LICENSE; original entrypoints/browser test integration files are reported separately. New files are additive and are not part of the original-file comparison.",
+  "summary": {
+    "coreFiles": 95,
+    "unchangedCoreFiles": 95,
+    "changedCoreFiles": [],
+    "entrypoints": 7,
+    "corePreserved": true
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "category": "preserved-core",
+      "originalSha256": "d526e18a44e1a4a297bbf832668f00f9a23bf7cb2e919411a22bec7742ededbf",
+      "currentSha256": "d526e18a44e1a4a297bbf832668f00f9a23bf7cb2e919411a22bec7742ededbf",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-context-shadow-benchmark.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "3f31c8b78022ec0ce8c49a6f29383cc73bb74a282f75d332b1fcc439310cd704",
+      "currentSha256": "3f31c8b78022ec0ce8c49a6f29383cc73bb74a282f75d332b1fcc439310cd704",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-context-shadow-benchmark.ts",
+      "category": "preserved-core",
+      "originalSha256": "84a4da52adbe9e3c5b2c1c00df439444e7a1a3e92b43757d655a125dfc4d9abd",
+      "currentSha256": "84a4da52adbe9e3c5b2c1c00df439444e7a1a3e92b43757d655a125dfc4d9abd",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-orchestration-ablations.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "14175b9b8ebebee1834ec6232892c77f8becd8d47773e5a2ee76ee76ec4c0653",
+      "currentSha256": "14175b9b8ebebee1834ec6232892c77f8becd8d47773e5a2ee76ee76ec4c0653",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-orchestration-ablations.ts",
+      "category": "preserved-core",
+      "originalSha256": "2378170cae656bfd2cff3b8c61e5d2e79390c37c0a6e0fc4582e9d653be8d613",
+      "currentSha256": "2378170cae656bfd2cff3b8c61e5d2e79390c37c0a6e0fc4582e9d653be8d613",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-orchestration-baseline.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "45c565c42f8dfde821699fa5982a3f0997d812e5b2837a95ac8b393fad52869d",
+      "currentSha256": "45c565c42f8dfde821699fa5982a3f0997d812e5b2837a95ac8b393fad52869d",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-orchestration-baseline.ts",
+      "category": "preserved-core",
+      "originalSha256": "452e60f542491dc7ac141f52a5342a5f8a94720a08290778a744a24d6667fd19",
+      "currentSha256": "452e60f542491dc7ac141f52a5342a5f8a94720a08290778a744a24d6667fd19",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-partitioning-benchmark.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "723b4f272b162e34ad51b074117ef3bc2f25dbd51089335bdfc2ee1c91242ce3",
+      "currentSha256": "723b4f272b162e34ad51b074117ef3bc2f25dbd51089335bdfc2ee1c91242ce3",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/agent-partitioning-benchmark.ts",
+      "category": "preserved-core",
+      "originalSha256": "c340583c7103422af955a234e2eb3f9a63a2904e79ede9ca816fda1cce5e84af",
+      "currentSha256": "c340583c7103422af955a234e2eb3f9a63a2904e79ede9ca816fda1cce5e84af",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/scalability-benchmark.ts",
+      "category": "preserved-core",
+      "originalSha256": "96ceb069a8ffeb0e5366db368720ae37389f920d8a5f6e9d0ef09b490113851f",
+      "currentSha256": "96ceb069a8ffeb0e5366db368720ae37389f920d8a5f6e9d0ef09b490113851f",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/cli/seed.ts",
+      "category": "preserved-core",
+      "originalSha256": "0ce0691ea1e8a3c787936bfc43cf00baaad44d92fc0657be5f097a07c52b3567",
+      "currentSha256": "0ce0691ea1e8a3c787936bfc43cf00baaad44d92fc0657be5f097a07c52b3567",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/config.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "bdf0140b089059ef2875cf19fcc9d8face6c1cba48854ed5e71a77834c54ca4c",
+      "currentSha256": "bdf0140b089059ef2875cf19fcc9d8face6c1cba48854ed5e71a77834c54ca4c",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/config.ts",
+      "category": "preserved-core",
+      "originalSha256": "8311bcbece925c531f5fb91722a3dd7ecd269bc597dd1ad92134cb428714fb00",
+      "currentSha256": "8311bcbece925c531f5fb91722a3dd7ecd269bc597dd1ad92134cb428714fb00",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/connection.ts",
+      "category": "preserved-core",
+      "originalSha256": "179531361da735783007baf502e8a9e1cafa7aae3890048ac0b2f12bca336b2a",
+      "currentSha256": "179531361da735783007baf502e8a9e1cafa7aae3890048ac0b2f12bca336b2a",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/repository.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "621cb40e6c985e36a0e9e24821c557816ba655240b35a8af8dee189bf955d929",
+      "currentSha256": "621cb40e6c985e36a0e9e24821c557816ba655240b35a8af8dee189bf955d929",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/repository.ts",
+      "category": "preserved-core",
+      "originalSha256": "3011195539b853b5de7aed824b7433ec72c9707c360c9f9b2b68ca7b7684d2a8",
+      "currentSha256": "3011195539b853b5de7aed824b7433ec72c9707c360c9f9b2b68ca7b7684d2a8",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/repository.work-units.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "14eb753dbe82170bde1dfb08e94dfbaa4648b8de7f473613eafce8c68485eb0d",
+      "currentSha256": "14eb753dbe82170bde1dfb08e94dfbaa4648b8de7f473613eafce8c68485eb0d",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/repository.workflow-baseline.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "74201b1fad554603b0a238f4045a5a9c34c85b46bda7e65f6f24376fb8fc3754",
+      "currentSha256": "74201b1fad554603b0a238f4045a5a9c34c85b46bda7e65f6f24376fb8fc3754",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/db/schema.ts",
+      "category": "preserved-core",
+      "originalSha256": "f70b185333238fbb868a71e04897ac198a320d4442fe2b8f5285c2a660114d9f",
+      "currentSha256": "f70b185333238fbb868a71e04897ac198a320d4442fe2b8f5285c2a660114d9f",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/example-workflow.integration.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "95413f32a81e4e536bae03716a42027ad246617f731a9387e7f9d5d0b261c24d",
+      "currentSha256": "95413f32a81e4e536bae03716a42027ad246617f731a9387e7f9d5d0b261c24d",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/layout/elk.ts",
+      "category": "preserved-core",
+      "originalSha256": "9515469485fd56010fe44084e35319b4a38e3edf9b9b1824c3d88111a00c3887",
+      "currentSha256": "9515469485fd56010fe44084e35319b4a38e3edf9b9b1824c3d88111a00c3887",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/memory.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "911bfbae0b739222fe2ba4481dd79dbfc78ad0f57f9dbf5568cd5b8bff211227",
+      "currentSha256": "911bfbae0b739222fe2ba4481dd79dbfc78ad0f57f9dbf5568cd5b8bff211227",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/memory.ts",
+      "category": "preserved-core",
+      "originalSha256": "d86b5fe39fa51b04c2b6bcb7e1717f4eac40a7edde9d49a09d82502b9ce4488e",
+      "currentSha256": "d86b5fe39fa51b04c2b6bcb7e1717f4eac40a7edde9d49a09d82502b9ce4488e",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/routes.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "285223b765107104bcdd0d6ba3ecd743f73087561136367b18d365e125ed6dfa",
+      "currentSha256": "285223b765107104bcdd0d6ba3ecd743f73087561136367b18d365e125ed6dfa",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/routes.ts",
+      "category": "preserved-core",
+      "originalSha256": "353966f5fef55049cafcf67b9b7302d7389b4ece777a5802213dc1950be5e4d8",
+      "currentSha256": "353966f5fef55049cafcf67b9b7302d7389b4ece777a5802213dc1950be5e4d8",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/contract-reconciler.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "5862ea50956d6f0ec613e91218090fda414110ca03e637641800b31691f310b1",
+      "currentSha256": "5862ea50956d6f0ec613e91218090fda414110ca03e637641800b31691f310b1",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/contract-reconciler.ts",
+      "category": "preserved-core",
+      "originalSha256": "b5cdfa2a615bac9bd83d62f98f7212917eb703778b46a9163bced74e261bd703",
+      "currentSha256": "b5cdfa2a615bac9bd83d62f98f7212917eb703778b46a9163bced74e261bd703",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/integration-runner.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "309caef79f660245149e0abe2c6dc5c46164f020adf61159ba1ea23601dc823f",
+      "currentSha256": "309caef79f660245149e0abe2c6dc5c46164f020adf61159ba1ea23601dc823f",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/integration-runner.ts",
+      "category": "preserved-core",
+      "originalSha256": "c0ceee661d80d28fa55b6f5cb9f9c8801f374de9775eb249f2ecfda0e984bc38",
+      "currentSha256": "c0ceee661d80d28fa55b6f5cb9f9c8801f374de9775eb249f2ecfda0e984bc38",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/model-router.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "dad4df2a572b9d04fba0e15e0c3d047b0a63ae13fbd495963123c70142da426b",
+      "currentSha256": "dad4df2a572b9d04fba0e15e0c3d047b0a63ae13fbd495963123c70142da426b",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/model-router.ts",
+      "category": "preserved-core",
+      "originalSha256": "540a0dcafe2049bd110bbf30849933b2ca0a66ff770a11b85b56f758462f9178",
+      "currentSha256": "540a0dcafe2049bd110bbf30849933b2ca0a66ff770a11b85b56f758462f9178",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/work-unit-context.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "7525f4bc25c73d5b70b70f680ec59f98d4ddb276259f8e7ab99eef13820bd873",
+      "currentSha256": "7525f4bc25c73d5b70b70f680ec59f98d4ddb276259f8e7ab99eef13820bd873",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/work-unit-context.ts",
+      "category": "preserved-core",
+      "originalSha256": "b944cae1d44f390758bdafc99efb682411843bb619542e6d87c2f63be9b90325",
+      "currentSha256": "b944cae1d44f390758bdafc99efb682411843bb619542e6d87c2f63be9b90325",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/work-unit-preview.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "11b30d3aea93b37dfc40ab0a1e9a5f248946e17cecf04ee7da2a8b3f98f38911",
+      "currentSha256": "11b30d3aea93b37dfc40ab0a1e9a5f248946e17cecf04ee7da2a8b3f98f38911",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/work-unit-preview.ts",
+      "category": "preserved-core",
+      "originalSha256": "85eda059480e359b5d85194a92fff55634338d2584134c641dfbac207bab121e",
+      "currentSha256": "85eda059480e359b5d85194a92fff55634338d2584134c641dfbac207bab121e",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/workflow-partitioner.ts",
+      "category": "preserved-core",
+      "originalSha256": "34bdb6f7d59e9ca2f1dbfa81d0c4638d14c676ad8b9a82d10b1aa5861ce88f01",
+      "currentSha256": "34bdb6f7d59e9ca2f1dbfa81d0c4638d14c676ad8b9a82d10b1aa5861ce88f01",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/workflow-scheduler.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "88f0d8e5ef11c79885b1f85a0feee1af6f75e26be153ab026142809034a0aded",
+      "currentSha256": "88f0d8e5ef11c79885b1f85a0feee1af6f75e26be153ab026142809034a0aded",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/services/workflow-scheduler.ts",
+      "category": "preserved-core",
+      "originalSha256": "e09e91b4b497e89bb096d1acc4eb4713bead19b063b67eb8ccafa1e0d5831fe8",
+      "currentSha256": "e09e91b4b497e89bb096d1acc4eb4713bead19b063b67eb8ccafa1e0d5831fe8",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/workspace.integration.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "5b520e9fd28427353d200d51ceb04009cdfe9c09f46be004d0619a1c0264505f",
+      "currentSha256": "5b520e9fd28427353d200d51ceb04009cdfe9c09f46be004d0619a1c0264505f",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/workspace.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "713199a34d59741528a549b8d28ec51c6f1326bca31c88b49bef9135c8d6f00f",
+      "currentSha256": "713199a34d59741528a549b8d28ec51c6f1326bca31c88b49bef9135c8d6f00f",
+      "identical": true
+    },
+    {
+      "path": "apps/local-server/src/workspace.ts",
+      "category": "preserved-core",
+      "originalSha256": "7e8f0b4328f467c0865b5595fbb1143f3117bfe26364bf7a665f11de9cf9646e",
+      "currentSha256": "7e8f0b4328f467c0865b5595fbb1143f3117bfe26364bf7a665f11de9cf9646e",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/App.test.tsx",
+      "category": "preserved-core",
+      "originalSha256": "315abe04a9e5297fee9723719865312a98543729a6baa8c1ec24325e0743d3ad",
+      "currentSha256": "315abe04a9e5297fee9723719865312a98543729a6baa8c1ec24325e0743d3ad",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "category": "preserved-core",
+      "originalSha256": "71d63d39677143fa175c5038a0efd4741af945b42e5602793578173634f45a89",
+      "currentSha256": "71d63d39677143fa175c5038a0efd4741af945b42e5602793578173634f45a89",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/api.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "a95680850fd38da21ffbdc0911270a8e656b679d40dff732c336c28d96bd5ed9",
+      "currentSha256": "a95680850fd38da21ffbdc0911270a8e656b679d40dff732c336c28d96bd5ed9",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/api.ts",
+      "category": "preserved-core",
+      "originalSha256": "dc24bbc4e67d661c61f9ce71cc82f9756f3c632623e5f0e76f2b9a1801ac4c97",
+      "currentSha256": "dc24bbc4e67d661c61f9ce71cc82f9756f3c632623e5f0e76f2b9a1801ac4c97",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/canvasSession.ts",
+      "category": "preserved-core",
+      "originalSha256": "baa796a2c02232bc5fa7edbaa71d47980fec7725f79d6ed2b453c4b65e47e242",
+      "currentSha256": "baa796a2c02232bc5fa7edbaa71d47980fec7725f79d6ed2b453c4b65e47e242",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/AppShell.tsx",
+      "category": "preserved-core",
+      "originalSha256": "f7aa86206e878eae2e88f5e863844c56b74528517565923d767f30cecbe8f582",
+      "currentSha256": "f7aa86206e878eae2e88f5e863844c56b74528517565923d767f30cecbe8f582",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/BlockEditorDialog.tsx",
+      "category": "preserved-core",
+      "originalSha256": "022808fec90395eee2c58320ef3728120abeb07d00d9824fcfa291964a0366cc",
+      "currentSha256": "022808fec90395eee2c58320ef3728120abeb07d00d9824fcfa291964a0366cc",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/BoundaryEditorDialog.tsx",
+      "category": "preserved-core",
+      "originalSha256": "a21d4442908010b6907527534721a8ecf51127654e1fe14f7c863bcda7a2d155",
+      "currentSha256": "a21d4442908010b6907527534721a8ecf51127654e1fe14f7c863bcda7a2d155",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/BoundaryNodeCard.tsx",
+      "category": "preserved-core",
+      "originalSha256": "c3ef952d141369b23b4ce07976da62074fd3c22f37f458965ab785dbc2374f68",
+      "currentSha256": "c3ef952d141369b23b4ce07976da62074fd3c22f37f458965ab785dbc2374f68",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/EdgeEditorDialog.tsx",
+      "category": "preserved-core",
+      "originalSha256": "cb9e65f5ff8927516e30b796cfd8ca24de7a97e75d2e5c502289d3363999bfc2",
+      "currentSha256": "cb9e65f5ff8927516e30b796cfd8ca24de7a97e75d2e5c502289d3363999bfc2",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/GraphNodeCard.tsx",
+      "category": "preserved-core",
+      "originalSha256": "b90eb3ae38e24b001a2d2de67832f25b1165fb2139114ad5e659bf1b8ac2b3d9",
+      "currentSha256": "b90eb3ae38e24b001a2d2de67832f25b1165fb2139114ad5e659bf1b8ac2b3d9",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/HierarchyTree.tsx",
+      "category": "preserved-core",
+      "originalSha256": "3a4d9a8818e9c5425d45b5a8f8368944910b1ff52a2fe770a8fe41b6994821f8",
+      "currentSha256": "3a4d9a8818e9c5425d45b5a8f8368944910b1ff52a2fe770a8fe41b6994821f8",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/Inspector.tsx",
+      "category": "preserved-core",
+      "originalSha256": "e2ff73edc304c22e681e2c1d01db7746eae4d4748be6825027555e96e464f420",
+      "currentSha256": "e2ff73edc304c22e681e2c1d01db7746eae4d4748be6825027555e96e464f420",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/SettingsPage.tsx",
+      "category": "preserved-core",
+      "originalSha256": "687be404cd50099bbafe5e2d305875c08cb726132f55f71a52bc885ccb1ba8dc",
+      "currentSha256": "687be404cd50099bbafe5e2d305875c08cb726132f55f71a52bc885ccb1ba8dc",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/WorkspaceCanvas.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "8e8bd89dd050e717a4a39214f8fdb46ecc3d1d86bbd2bcd403b5c35b9d8f5f61",
+      "currentSha256": "8e8bd89dd050e717a4a39214f8fdb46ecc3d1d86bbd2bcd403b5c35b9d8f5f61",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/WorkspaceCanvas.tsx",
+      "category": "preserved-core",
+      "originalSha256": "a55e7ae0f49e036d8e7eefeff7fdebc34d7a377e97afafd6d43adc6a46e56e87",
+      "currentSha256": "a55e7ae0f49e036d8e7eefeff7fdebc34d7a377e97afafd6d43adc6a46e56e87",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/components/WorkspaceDialog.tsx",
+      "category": "preserved-core",
+      "originalSha256": "c361649dac27fd27728166a63efcfdc7098c5f335c3bf9aba1d477c82438f8c7",
+      "currentSha256": "c361649dac27fd27728166a63efcfdc7098c5f335c3bf9aba1d477c82438f8c7",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/customBlockIcons.tsx",
+      "category": "preserved-core",
+      "originalSha256": "68e5f47a03f011b2932e6a9924d4af0927905a1b47d316b50850cc696e3fb082",
+      "currentSha256": "68e5f47a03f011b2932e6a9924d4af0927905a1b47d316b50850cc696e3fb082",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/displayLabels.ts",
+      "category": "preserved-core",
+      "originalSha256": "2a17fcf9eb53c6ef2063a646a0da0d5523851807e68efcca77cee940323eb555",
+      "currentSha256": "2a17fcf9eb53c6ef2063a646a0da0d5523851807e68efcca77cee940323eb555",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/graphStyles.ts",
+      "category": "preserved-core",
+      "originalSha256": "a419c2bd5434cfaf66f2f14058bf0505a21d25961760acbaf7b88f7a46b33e01",
+      "currentSha256": "a419c2bd5434cfaf66f2f14058bf0505a21d25961760acbaf7b88f7a46b33e01",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/nodeIcons.tsx",
+      "category": "preserved-core",
+      "originalSha256": "11ed15c0e90bcae6491c93d24f3ac5bd0ffe1b4f526d880336495f927848b636",
+      "currentSha256": "11ed15c0e90bcae6491c93d24f3ac5bd0ffe1b4f526d880336495f927848b636",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "category": "preserved-core",
+      "originalSha256": "2bdfab00fc546ecc65137dddeda2df5da692269dc4edc3addb0679d0e2da357a",
+      "currentSha256": "2bdfab00fc546ecc65137dddeda2df5da692269dc4edc3addb0679d0e2da357a",
+      "identical": true
+    },
+    {
+      "path": "apps/web/src/test/setup.ts",
+      "category": "preserved-core",
+      "originalSha256": "b8916e0595c74eda581a8de56aec6493c6553940a7dc95cf48c1a165009d387c",
+      "currentSha256": "b8916e0595c74eda581a8de56aec6493c6553940a7dc95cf48c1a165009d387c",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/README.md",
+      "category": "preserved-core",
+      "originalSha256": "335beefbc9744f9907b14abfeab8d437d217c9730bc412461bfe41b61754b760",
+      "currentSha256": "335beefbc9744f9907b14abfeab8d437d217c9730bc412461bfe41b61754b760",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/package.json",
+      "category": "preserved-core",
+      "originalSha256": "1cab3d4ab93d1415f763a3ea00f3469ad54c1dcbeabd5d6fefa3ce415f289254",
+      "currentSha256": "1cab3d4ab93d1415f763a3ea00f3469ad54c1dcbeabd5d6fefa3ce415f289254",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/context/compiler.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "d8c73ed4730649b78f5d8e40f33460c90a2c3aec75022f9ce55926524fff2b0c",
+      "currentSha256": "d8c73ed4730649b78f5d8e40f33460c90a2c3aec75022f9ce55926524fff2b0c",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/context/compiler.ts",
+      "category": "preserved-core",
+      "originalSha256": "b2ef4822f953cf25ae8e18a83857f50d3c6f9af01680287eeb7a49ef3d1115c2",
+      "currentSha256": "b2ef4822f953cf25ae8e18a83857f50d3c6f9af01680287eeb7a49ef3d1115c2",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/context/contracts.ts",
+      "category": "preserved-core",
+      "originalSha256": "db630e6e30e13b9942d5351ce540d708b836b30354b3cdba0947fa57c4f119e2",
+      "currentSha256": "db630e6e30e13b9942d5351ce540d708b836b30354b3cdba0947fa57c4f119e2",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/context/render.ts",
+      "category": "preserved-core",
+      "originalSha256": "3b871181a084dfefeb28eb5cb5daa57a41495ea053c2c6e8fc02e8fd3ce0d66c",
+      "currentSha256": "3b871181a084dfefeb28eb5cb5daa57a41495ea053c2c6e8fc02e8fd3ce0d66c",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/context/retrieval.ts",
+      "category": "preserved-core",
+      "originalSha256": "201cf3de7db5221f1dab1bb204e8315f7b5430358f98b6acf4b347793f06959d",
+      "currentSha256": "201cf3de7db5221f1dab1bb204e8315f7b5430358f98b6acf4b347793f06959d",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/index.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "e4f68af0edca5ad838245bbc7f5ec328c612c1e57ac1176d5a0e9f6bb0ed47e1",
+      "currentSha256": "e4f68af0edca5ad838245bbc7f5ec328c612c1e57ac1176d5a0e9f6bb0ed47e1",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/index.ts",
+      "category": "preserved-core",
+      "originalSha256": "945fdb8c70f28d7263f09dd541d6a7d374106351e7d0462723ecf373d7ea0e2b",
+      "currentSha256": "945fdb8c70f28d7263f09dd541d6a7d374106351e7d0462723ecf373d7ea0e2b",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/orchestration/legacy-baseline.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "189a4959bf897475de340a4506cd8f3ab410c41880f64bffab0d609a70c97af7",
+      "currentSha256": "189a4959bf897475de340a4506cd8f3ab410c41880f64bffab0d609a70c97af7",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/src/orchestration/legacy-baseline.ts",
+      "category": "preserved-core",
+      "originalSha256": "25377d209a8214c31400bbd08066242f94dff680e34625e99d09fbc791dda480",
+      "currentSha256": "25377d209a8214c31400bbd08066242f94dff680e34625e99d09fbc791dda480",
+      "identical": true
+    },
+    {
+      "path": "packages/agent-runtime/tsconfig.json",
+      "category": "preserved-core",
+      "originalSha256": "67f2a512c4511b4ae3f820c68da098bae71214a02847677394972fa63861f384",
+      "currentSha256": "67f2a512c4511b4ae3f820c68da098bae71214a02847677394972fa63861f384",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/README.md",
+      "category": "preserved-core",
+      "originalSha256": "169915d392fc5d74b0723204b18f66e06d86c498a5dbb033a6de3564c750a597",
+      "currentSha256": "169915d392fc5d74b0723204b18f66e06d86c498a5dbb033a6de3564c750a597",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/package.json",
+      "category": "preserved-core",
+      "originalSha256": "a9a76b7184e34ac6a069626e4e8f9975f21452c68eccb1308a66219e20b69f84",
+      "currentSha256": "a9a76b7184e34ac6a069626e4e8f9975f21452c68eccb1308a66219e20b69f84",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/src/index.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "1c74997a0eac654ccde6f801686ec5f2a7d18af0e184aefa851403e9689aa4e1",
+      "currentSha256": "1c74997a0eac654ccde6f801686ec5f2a7d18af0e184aefa851403e9689aa4e1",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/src/index.ts",
+      "category": "preserved-core",
+      "originalSha256": "c0361e0a011c69458865516adcf8e3eb2be48c1be490657b69353ef5cbe95db8",
+      "currentSha256": "c0361e0a011c69458865516adcf8e3eb2be48c1be490657b69353ef5cbe95db8",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/src/work-units.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "edfb19523c5e4ba6caccc8c7e8e48c5f5841eb28804caa79128a5037a7874e6e",
+      "currentSha256": "edfb19523c5e4ba6caccc8c7e8e48c5f5841eb28804caa79128a5037a7874e6e",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/src/work-units.ts",
+      "category": "preserved-core",
+      "originalSha256": "60d4049106810a62d7369a28a218eb4bc7f6d071ad7ebca2c347125f0d0576b2",
+      "currentSha256": "60d4049106810a62d7369a28a218eb4bc7f6d071ad7ebca2c347125f0d0576b2",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-model/tsconfig.json",
+      "category": "preserved-core",
+      "originalSha256": "b0ec034df75fdd7a3dd86544d8d13d727db7125ba13a5590cf1e33b5f86e9954",
+      "currentSha256": "b0ec034df75fdd7a3dd86544d8d13d727db7125ba13a5590cf1e33b5f86e9954",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/README.md",
+      "category": "preserved-core",
+      "originalSha256": "22b23263bc465b3fc79c4a6d34b6f195be60fecb20f133a076404f78d07946c1",
+      "currentSha256": "22b23263bc465b3fc79c4a6d34b6f195be60fecb20f133a076404f78d07946c1",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/package.json",
+      "category": "preserved-core",
+      "originalSha256": "8b3a2bb46efa183024d550d86eebfe98aaaeaa56430f8d2e1134bf2f39c1fdea",
+      "currentSha256": "8b3a2bb46efa183024d550d86eebfe98aaaeaa56430f8d2e1134bf2f39c1fdea",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/src/index.ts",
+      "category": "preserved-core",
+      "originalSha256": "b225e8f1ddf554f83e5aa74aedbd79694be2a5d2f7261664e3838d53c82584a1",
+      "currentSha256": "b225e8f1ddf554f83e5aa74aedbd79694be2a5d2f7261664e3838d53c82584a1",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/src/partitioning/contracts.ts",
+      "category": "preserved-core",
+      "originalSha256": "4378cf24a33eac325b149a974561aa529c19f45d294118fac6c849773d95ea0d",
+      "currentSha256": "4378cf24a33eac325b149a974561aa529c19f45d294118fac6c849773d95ea0d",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/src/partitioning/deterministic.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "c1c6c83852b64b58a97f97e75aeac160186a348a318be1183c407aaa119ac763",
+      "currentSha256": "c1c6c83852b64b58a97f97e75aeac160186a348a318be1183c407aaa119ac763",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/src/partitioning/deterministic.ts",
+      "category": "preserved-core",
+      "originalSha256": "1cdcf2d3fb916663c2dc4d6d040b2f9ff1fb96d770f6af768411110a156e003c",
+      "currentSha256": "1cdcf2d3fb916663c2dc4d6d040b2f9ff1fb96d770f6af768411110a156e003c",
+      "identical": true
+    },
+    {
+      "path": "packages/graph-query/tsconfig.json",
+      "category": "preserved-core",
+      "originalSha256": "2eb22a0b5ad3f0bb5b3d17cff144e813276b60a43a7286964948bb2efc69fbab",
+      "currentSha256": "2eb22a0b5ad3f0bb5b3d17cff144e813276b60a43a7286964948bb2efc69fbab",
+      "identical": true
+    },
+    {
+      "path": "packages/parser/README.md",
+      "category": "preserved-core",
+      "originalSha256": "f4ead4d2ec00c186a08b05cdf2332f85534fece23861b24aef55f0efe0c607df",
+      "currentSha256": "f4ead4d2ec00c186a08b05cdf2332f85534fece23861b24aef55f0efe0c607df",
+      "identical": true
+    },
+    {
+      "path": "packages/parser/package.json",
+      "category": "preserved-core",
+      "originalSha256": "3e5d181a96488d165f1a178d052a73e9b9488ee674d923f47b79afd1ea7b907a",
+      "currentSha256": "3e5d181a96488d165f1a178d052a73e9b9488ee674d923f47b79afd1ea7b907a",
+      "identical": true
+    },
+    {
+      "path": "packages/parser/src/index.test.ts",
+      "category": "preserved-core",
+      "originalSha256": "d0657a7154ff79fa7cf9c2f4b94a9885c1621d45e9c0ab04c7d89f45be96bdb0",
+      "currentSha256": "d0657a7154ff79fa7cf9c2f4b94a9885c1621d45e9c0ab04c7d89f45be96bdb0",
+      "identical": true
+    },
+    {
+      "path": "packages/parser/src/index.ts",
+      "category": "preserved-core",
+      "originalSha256": "51091b850f4199619cd9606b116d988c13936512019f62d692060298a0e2a97c",
+      "currentSha256": "51091b850f4199619cd9606b116d988c13936512019f62d692060298a0e2a97c",
+      "identical": true
+    },
+    {
+      "path": "packages/parser/tsconfig.json",
+      "category": "preserved-core",
+      "originalSha256": "67f2a512c4511b4ae3f820c68da098bae71214a02847677394972fa63861f384",
+      "currentSha256": "67f2a512c4511b4ae3f820c68da098bae71214a02847677394972fa63861f384",
+      "identical": true
+    }
+  ],
+  "entrypoints": [
+    {
+      "path": "apps/local-server/src/server.ts",
+      "category": "entrypoint-review",
+      "originalSha256": "e36555a77f29246c82209856859b1db1da56c09322ccfb0c635af6c0361222a9",
+      "currentSha256": "e55102710e8d91a2e385b3db8816167be43810a0a6617ce592310160323f4ee0",
+      "identical": false,
+      "diff": "diff --git a/apps/local-server/src/server.ts b/apps/local-server/src/server.ts\nindex df00fde..622e654 100644\n--- a/apps/local-server/src/server.ts\n+++ b/apps/local-server/src/server.ts\n@@ -1,12 +1,15 @@\n import { fileURLToPath } from \"node:url\";\n+import path from \"node:path\";\n import cors from \"@fastify/cors\";\n import Fastify from \"fastify\";\n import { ZodError } from \"zod\";\n import { resolveAgentFeatureFlags, resolveDbPath, resolveRepoRoot, resolveServerHost, resolveServerPort, type AgentFeatureFlags } from \"./config\";\n import { registerApiRoutes } from \"./routes\";\n import { WorkspaceRuntime } from \"./workspace\";\n+import { registerStudioRoutes } from \"./studio/routes\";\n+import { StudioService } from \"./studio/service\";\n \n-export async function buildServer(options: { dbPath?: string; seedSelf?: boolean; selfRootPath?: string; agentFeatureFlags?: AgentFeatureFlags } = {}) {\n+export async function buildServer(options: { dbPath?: string; seedSelf?: boolean; selfRootPath?: string; agentFeatureFlags?: AgentFeatureFlags; studioDataPath?: string } = {}) {\n   const runtime = new WorkspaceRuntime(\n     options.dbPath ?? resolveDbPath(),\n     options.selfRootPath ?? resolveRepoRoot(),\n@@ -24,12 +27,6 @@ export async function buildServer(options: { dbPath?: string; seedSelf?: boolean\n     origin: true\n   });\n \n-  await registerApiRoutes(app, runtime);\n-\n-  app.addHook(\"onClose\", async () => {\n-    runtime.close();\n-  });\n-\n   app.setErrorHandler((error, _request, reply) => {\n     const caughtError = error as Error & { statusCode?: number };\n     const zodError = caughtError instanceof ZodError ? caughtError : null;\n@@ -42,6 +39,15 @@ export async function buildServer(options: { dbPath?: string; seedSelf?: boolean\n     });\n   });\n \n+  await registerApiRoutes(app, runtime);\n+  await registerStudioRoutes(app, new StudioService(options.studioDataPath ?? process.env.SPROUT_DATA_PATH ?? path.join(resolveRepoRoot(), \".graphcode\", \"studio\")));\n+\n+  app.addHook(\"onClose\", async () => {\n+    runtime.close();\n+  });\n+\n+\n+\n   return app;\n }\n \n"
+    },
+    {
+      "path": "apps/web/e2e/agent-sidebar.spec.ts",
+      "category": "entrypoint-review",
+      "originalSha256": "07a6c7d56b349d87d454e6e205606edafc59617378ed4ff11989abecbbb784d8",
+      "currentSha256": "25d2da75edc90d025166e14d89299bccb527d98d639f1060bec3d0a07b11339d",
+      "identical": false,
+      "diff": "diff --git a/apps/web/e2e/agent-sidebar.spec.ts b/apps/web/e2e/agent-sidebar.spec.ts\nindex 6dde96f..ebaeafb 100644\n--- a/apps/web/e2e/agent-sidebar.spec.ts\n+++ b/apps/web/e2e/agent-sidebar.spec.ts\n@@ -50,7 +50,7 @@ test(\"planning and coding sidebar completes the proposal-first example flow\", as\n       { key: canvasSessionKey, id: projectId }\n     );\n     await page.setViewportSize({ width: 1440, height: 1000 });\n-    await page.goto(\"/\");\n+    await page.goto(\"/#expert\");\n     await expect(page.locator(\".workspace-flow\")).toBeVisible();\n     await expect(page.locator(\".tree-row\").first()).toBeVisible();\n \n"
+    },
+    {
+      "path": "apps/web/e2e/codex-workflow.spec.ts",
+      "category": "entrypoint-review",
+      "originalSha256": "a6bed32a9d4ccf6d858e221dd31f507037a9e62f1fad14ec3086d9abac400b67",
+      "currentSha256": "82cbe77a3f75a0e0629e1bdadae09c93c3fd524bd5f70175a8fedb7ab6eb1f06",
+      "identical": false,
+      "diff": "diff --git a/apps/web/e2e/codex-workflow.spec.ts b/apps/web/e2e/codex-workflow.spec.ts\nindex 2bbc243..7ec375d 100644\n--- a/apps/web/e2e/codex-workflow.spec.ts\n+++ b/apps/web/e2e/codex-workflow.spec.ts\n@@ -1,4 +1,4 @@\n-import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from \"node:fs\";\n+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from \"node:fs\";\n import { tmpdir } from \"node:os\";\n import { join, resolve } from \"node:path\";\n import { expect, test, type Locator, type Page, type TestInfo } from \"@playwright/test\";\n@@ -38,6 +38,13 @@ test.describe(\"real Codex provider\", () => {\n     const exampleRoot = join(temporaryRoot, \"review-proposal-lab\");\n     cpSync(resolve(repoRoot, \"examples/review-proposal-lab\"), exampleRoot, { recursive: true });\n     const implementationPath = join(exampleRoot, \"src/discount.ts\");\n+    // The upstream example already includes the requested fix. Reintroduce the\n+    // missing guard only in this disposable fixture so the real coding test\n+    // measures a meaningful repair instead of asking the model for a no-op.\n+    const exampleSource = readFileSync(implementationPath, \"utf8\");\n+    const brokenSource = exampleSource.replace(/  if \\(input\\.subtotal < 50\\) \\{\\n    return 0;\\n  \\}\\n\\n/, \"\");\n+    expect(brokenSource).not.toBe(exampleSource);\n+    writeFileSync(implementationPath, brokenSource, \"utf8\");\n     const originalSource = readFileSync(implementationPath, \"utf8\");\n \n     try {\n@@ -72,7 +79,7 @@ test.describe(\"real Codex provider\", () => {\n         { key: canvasSessionKey, id: projectId }\n       );\n       await page.setViewportSize({ width: 1440, height: 1000 });\n-      await page.goto(\"/\");\n+      await page.goto(\"/#expert\");\n       await expect(page.locator(\".workspace-flow\")).toBeVisible();\n \n       await page.getByRole(\"button\", { name: \"Settings\", exact: true }).click();\n"
+    },
+    {
+      "path": "apps/web/e2e/visual-smoke.spec.ts",
+      "category": "entrypoint-review",
+      "originalSha256": "4bb5e417b2d2354a015477b6d1b1f614c906dbcf24e671d096b5067dd336e84c",
+      "currentSha256": "a65ca6515d842298521b3a91dff579d333afdfdaf52a5a90284aa2143631880f",
+      "identical": false,
+      "diff": "diff --git a/apps/web/e2e/visual-smoke.spec.ts b/apps/web/e2e/visual-smoke.spec.ts\nindex 8013fb3..7c670b3 100644\n--- a/apps/web/e2e/visual-smoke.spec.ts\n+++ b/apps/web/e2e/visual-smoke.spec.ts\n@@ -15,7 +15,7 @@ test(\"empty workspace stays focused and viewport-safe\", async ({ page }, testInf\n \n   for (const viewport of viewports) {\n     await page.setViewportSize(viewport);\n-    await page.goto(\"/\");\n+    await page.goto(\"/#expert\");\n     await expect(page.getByRole(\"heading\", { name: \"Open a workspace to begin\" })).toBeVisible();\n     await expect(page.locator(\".left-panel\")).toBeHidden();\n     await expect(page.locator(\".right-panel\")).toBeHidden();\n@@ -54,7 +54,7 @@ test(\"current workspace remains stable across primary user-visible states\", asyn\n \n   for (const viewport of viewports) {\n     await page.setViewportSize(viewport);\n-    await page.goto(\"/\");\n+    await page.goto(\"/#expert\");\n     await expect(page.locator(\".brand-lockup h1\")).toHaveText(project.name);\n     await expect(page.locator(\".canvas-panel\")).toBeVisible();\n     await expectLoadedWorkspace(page);\n@@ -71,7 +71,7 @@ test(\"current workspace remains stable across primary user-visible states\", asyn\n   }\n \n   await page.setViewportSize(viewports[0]);\n-  await page.goto(\"/\");\n+  await page.goto(\"/#expert\");\n   await expectLoadedWorkspace(page);\n   await expect(page.getByRole(\"button\", { name: \"Reset self workspace\", exact: true })).toHaveClass(/button--ghost/);\n   await expect(page.locator(\".index-state-badge.unavailable\")).toBeVisible();\n@@ -158,7 +158,7 @@ test(\"system dark theme colors the complete shell\", async ({ page }, testInfo) =\n     { key: canvasSessionKey, id: projectId }\n   );\n   await page.setViewportSize(viewports[0]);\n-  await page.goto(\"/\");\n+  await page.goto(\"/#expert\");\n   await expectLoadedWorkspace(page);\n   await expect(page.locator(\"html\")).toHaveAttribute(\"data-theme\", \"system\");\n   await expect(page.locator(\".tree-row.selected\")).toBeVisible();\n"
+    },
+    {
+      "path": "apps/web/index.html",
+      "category": "entrypoint-review",
+      "originalSha256": "69c445ec1524e1c3f8f16a34fa78a5c12e7c80fd0d01780070d5763a3e696ebc",
+      "currentSha256": "372585a0baeb5f026f6cd5aad3c70843a7078e5614026eee1f8be0ebe546ad56",
+      "identical": false,
+      "diff": "diff --git a/apps/web/index.html b/apps/web/index.html\nindex 6c56292..b21a7d1 100644\n--- a/apps/web/index.html\n+++ b/apps/web/index.html\n@@ -3,7 +3,10 @@\n   <head>\n     <meta charset=\"UTF-8\" />\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n-    <title>GraphCode</title>\n+    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\" />\n+    <meta name=\"theme-color\" content=\"#c0e98c\" />\n+    <meta name=\"description\" content=\"Sprout 芽芽工坊：把点子种出来，把每一步看明白。可视化 AI 创作、小游戏和小工具。\" />\n+    <title>Sprout 芽芽工坊 · 让想法长出来</title>\n   </head>\n   <body>\n     <div id=\"root\"></div>\n"
+    },
+    {
+      "path": "apps/web/playwright.config.ts",
+      "category": "entrypoint-review",
+      "originalSha256": "6e4db74a2822ffcfa8a82d2f60b69fc360978c9171f0b19aebf152aaf96e717a",
+      "currentSha256": "c42c34988ad12f6209832b369d0a589db68a1d2accf7b94d569139ad421fccfc",
+      "identical": false,
+      "diff": "diff --git a/apps/web/playwright.config.ts b/apps/web/playwright.config.ts\nindex c12a453..0c7a693 100644\n--- a/apps/web/playwright.config.ts\n+++ b/apps/web/playwright.config.ts\n@@ -2,6 +2,8 @@ import { defineConfig } from \"@playwright/test\";\n \n const mountedWslTemp = process.platform === \"linux\" ? { TMPDIR: \"/tmp\", TEMP: \"/tmp\", TMP: \"/tmp\" } : {};\n \n+const testBaseURL = process.env.GRAPHCODE_TEST_BASE_URL ?? \"http://127.0.0.1:5173\";\n+\n export default defineConfig({\n   testDir: \"./e2e\",\n   fullyParallel: false,\n@@ -16,14 +18,14 @@ export default defineConfig({\n     [\"html\", { outputFolder: \"../../.graphcode/playwright-report\", open: \"never\" }]\n   ],\n   use: {\n-    baseURL: \"http://127.0.0.1:5173\",\n+    baseURL: testBaseURL,\n     colorScheme: \"light\",\n     screenshot: \"only-on-failure\",\n     trace: \"retain-on-failure\"\n   },\n   webServer: {\n-    command: \"pnpm --dir ../.. dev\",\n-    url: \"http://127.0.0.1:5173/api/health\",\n+    command: \"corepack pnpm --dir ../.. dev\",\n+    url: `${testBaseURL}/api/health`,\n     reuseExistingServer: true,\n     timeout: 180_000,\n     env: {\n"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "category": "entrypoint-review",
+      "originalSha256": "a80dcb91da9f1dd02e8b64c31d056e8b5894c2e08efe3500d2ef03f996293d30",
+      "currentSha256": "abee17c78cc15b0960197f7330ad1125f87a2df32a76b4518807d46740b9c492",
+      "identical": false,
+      "diff": "diff --git a/apps/web/src/main.tsx b/apps/web/src/main.tsx\nindex 16958a2..3faeb5e 100644\n--- a/apps/web/src/main.tsx\n+++ b/apps/web/src/main.tsx\n@@ -1,10 +1,10 @@\n import React from \"react\";\n import ReactDOM from \"react-dom/client\";\n-import App from \"./App\";\n+import Root from \"./Root\";\n import \"./styles.css\";\n \n ReactDOM.createRoot(document.getElementById(\"root\")!).render(\n   <React.StrictMode>\n-    <App />\n+    <Root />\n   </React.StrictMode>\n );\n"
+    }
+  ],
+  "limitations": [
+    "Byte identity establishes preserved implementation, not successful operation of every external provider or unchanged behavior under every dependency/environment.",
+    "Entrypoint/browser integration files require human inspection and regression tests; they are not silently counted as unchanged.",
+    "New Studio behavior is separate and is not evidence that the original advanced coding pipeline supports all Studio features."
+  ]
+}

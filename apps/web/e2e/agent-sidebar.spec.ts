@@ -50,7 +50,7 @@ test("planning and coding sidebar completes the proposal-first example flow", as
       { key: canvasSessionKey, id: projectId }
     );
     await page.setViewportSize({ width: 1440, height: 1000 });
-    await page.goto("/");
+    await page.goto("/#expert");
     await expect(page.locator(".workspace-flow")).toBeVisible();
     await expect(page.locator(".tree-row").first()).toBeVisible();
 

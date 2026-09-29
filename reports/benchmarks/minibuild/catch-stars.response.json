@@ -1,0 +1,1 @@
+{"code":"function stepGame(state, event) {\n  const next = { ...state };\n  if (next.status === 'over') return next;\n\n  if (event.type === 'catch') next.score += 10;\n  else if (event.type === 'miss') next.lives = Math.max(0, next.lives - 1);\n\n  next.level = Math.floor(next.score / 50) + 1;\n  if (next.lives === 0) next.status = 'over';\n  return next;\n}"}

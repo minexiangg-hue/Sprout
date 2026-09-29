@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "name": "Actual Studio export to editable expert workspace",
+  "generatedAt": "2026-09-29T12:24:13.105Z",
+  "sourceProject": "reports/benchmarks/studio-live/project.json",
+  "outputDirectory": "/tmp/sprout-expert-live-20260929",
+  "command": "node scripts/unpack-project.mjs reports/benchmarks/studio-live/project.json /tmp/sprout-expert-live-20260929",
+  "rebuildCommand": "node /tmp/sprout-expert-live-20260929/build.mjs",
+  "sourceFiles": [
+    {
+      "file": "src/scene.html",
+      "moduleId": "space-scene",
+      "bytes": 1754,
+      "sha256": "79ddcd499be6b419eb33eaa43469157e6cb903cfd8d14e70f692ca15c947786f",
+      "matchesOriginal": true
+    },
+    {
+      "file": "src/style.css",
+      "moduleId": "space-style",
+      "bytes": 4397,
+      "sha256": "f61567cd05a129dca49876cda5474be75c18b1b0db09855a2b6ecf0f092acf3a",
+      "matchesOriginal": true
+    },
+    {
+      "file": "src/timer.js",
+      "moduleId": "timer-engine",
+      "bytes": 3053,
+      "sha256": "31e01826093034a42c06b9741f7089c32a83ad77fd5f59ffb45e1128b2049502",
+      "matchesOriginal": true
+    },
+    {
+      "file": "src/feedback.js",
+      "moduleId": "mission-feedback",
+      "bytes": 2808,
+      "sha256": "6963be8420e6e8854214299b097756dca29d64821ef10cf867f287a52d52ac89",
+      "matchesOriginal": true
+    }
+  ],
+  "entryExists": true,
+  "rebuildPassed": true,
+  "tests": {
+    "command": "node --test scripts/unpack-project.test.mjs",
+    "passed": 6,
+    "failed": 0
+  },
+  "passed": true
+}

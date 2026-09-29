@@ -1,0 +1,78 @@
+
+> test
+> react-scripts test --env=jsdom --watchAll=false --testPathPattern src/react/blogging --runInBand --json --outputFile /home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/compatible-dependencies-original-layout.json
+
+
+FAIL src/react/blogging/addCanonicalUrl.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'
+
+    Require stack:
+      node_modules/fetch-mock/cjs/server.js
+      src/react/blogging/addCanonicalUrl.test.js
+
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+      3 | import { MemoryRouter } from 'react-router-dom';
+    > 4 | import fetchMock from 'fetch-mock';
+        | ^
+      5 | import '@testing-library/jest-dom';
+      6 | import CMS from './addCanonicalUrl';
+      7 |
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)
+      at Object.<anonymous> (src/react/blogging/addCanonicalUrl.test.js:4:1)
+
+FAIL src/react/blogging/addComment.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'
+
+    Require stack:
+      node_modules/fetch-mock/cjs/server.js
+      src/react/blogging/addComment.test.js
+
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+      3 | import { MemoryRouter } from 'react-router-dom';
+    > 4 | import fetchMock from 'fetch-mock';
+        | ^
+      5 | import '@testing-library/jest-dom';
+      6 | import App from './addComment';
+      7 |
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)
+      at Object.<anonymous> (src/react/blogging/addComment.test.js:4:1)
+
+FAIL src/react/blogging/addAltTextToImage.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'
+
+    Require stack:
+      node_modules/fetch-mock/cjs/server.js
+      src/react/blogging/addAltTextToImage.test.js
+
+      2 | import { render, screen, act, fireEvent } from '@testing-library/react';
+      3 | import { MemoryRouter } from 'react-router-dom';
+    > 4 | import fetchMock from 'fetch-mock';
+        | ^
+      5 | import '@testing-library/jest-dom';
+      6 | import CMS from './AddAltTextToImage';
+      7 |
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)
+      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:4:1)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+Test Suites: 3 failed, 3 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.716 s
+Ran all test suites matching /src\/react\/blogging/i.
+Test results written to: ../../../home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/compatible-dependencies-original-layout.json

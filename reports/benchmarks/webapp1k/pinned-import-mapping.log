@@ -1,0 +1,15 @@
+
+> test
+> react-scripts test --env=jsdom --watchAll=false --testPathPattern src/react/blogging --runInBand --json --outputFile /home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/pinned-import-mapping.json
+
+
+PASS src/react/blogging/addCanonicalUrl.test.js
+PASS src/react/blogging/addComment.test.js
+PASS src/react/blogging/addAltTextToImage.test.js
+
+Test Suites: 3 passed, 3 total
+Tests:       6 passed, 6 total
+Snapshots:   0 total
+Time:        2.203 s
+Ran all test suites matching /src\/react\/blogging/i.
+Test results written to: ../../../home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/pinned-import-mapping.json

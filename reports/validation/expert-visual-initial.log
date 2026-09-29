@@ -1,0 +1,55 @@
+
+Running 3 tests using 1 worker
+
+(node:199620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/visual-smoke.spec.ts:13:1 › empty workspace stays focused and viewport-safe (3.1s)
+  ✘  2 e2e/visual-smoke.spec.ts:33:1 › current workspace remains stable across primary user-visible states (39.4s)
+(node:200525) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 e2e/visual-smoke.spec.ts:145:1 › system dark theme colors the complete shell (7.6s)
+
+
+  1) e2e/visual-smoke.spec.ts:33:1 › current workspace remains stable across primary user-visible states 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.index-state-badge.unavailable')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 10000ms
+      - waiting for locator('.index-state-badge.unavailable')
+
+
+      75 |   await expectLoadedWorkspace(page);
+      76 |   await expect(page.getByRole("button", { name: "Reset self workspace", exact: true })).toHaveClass(/button--ghost/);
+    > 77 |   await expect(page.locator(".index-state-badge.unavailable")).toBeVisible();
+         |                                                                ^
+      78 |
+      79 |   await page.getByRole("tab", { name: "Planning", exact: true }).click();
+      80 |   await attachScreenshot(page, testInfo, "planning-panel");
+        at /home/ubuntu/CodexWorkspace/GraphCode/apps/web/e2e/visual-smoke.spec.ts:77:64
+
+    attachment #7: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../.graphcode/playwright-results/visual-smoke-current-works-72aca-primary-user-visible-states/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../.graphcode/playwright-results/visual-smoke-current-works-72aca-primary-user-visible-states/error-context.md
+
+    attachment #9: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../.graphcode/playwright-results/visual-smoke-current-works-72aca-primary-user-visible-states/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../.graphcode/playwright-results/visual-smoke-current-works-72aca-primary-user-visible-states/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e/visual-smoke.spec.ts:33:1 › current workspace remains stable across primary user-visible states 
+  2 passed (51.5s)
+undefined
+/home/ubuntu/CodexWorkspace/GraphCode/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: playwright test e2e/visual-smoke.spec.ts

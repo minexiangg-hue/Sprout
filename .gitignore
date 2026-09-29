@@ -230,3 +230,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Research cache and local creation data
+.firecrawl/
+.sprout/
+# Keep verification evidence with the handoff.
+!reports/validation/
+!reports/validation/*.log
+!reports/benchmarks/**/*.log

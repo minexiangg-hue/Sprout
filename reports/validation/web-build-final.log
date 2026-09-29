@@ -1,0 +1,19 @@
+
+> @graphcode/web@0.1.0 build /home/ubuntu/CodexWorkspace/GraphCode/apps/web
+> tsc -p tsconfig.json --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 3579 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.70 kB │ gzip:   0.48 kB
+dist/assets/index-B69KbBdF.css  492.96 kB │ gzip:  56.38 kB
+dist/assets/index-D_rN-Mj9.js   233.89 kB │ gzip:  75.60 kB
+dist/assets/App-QFOsPlPL.js     536.11 kB │ gzip: 153.91 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.73s

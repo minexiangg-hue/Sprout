@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 1,
+  "name": "GraphCode MiniBuild-3",
+  "version": "1.0.0",
+  "generatedAt": "2026-09-29T12:17:35.389Z",
+  "mode": "replay",
+  "corpusSha256": "0fb51b37ccee30a0f700ff456d5f36c8ac2cb29a662f10052c7f15b175062ccc",
+  "machine": {
+    "node": "v24.18.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "protocol": {
+    "tasks": 3,
+    "cases": 24,
+    "attemptsPerTask": 1,
+    "repairAttempts": 0,
+    "promptIncludesTests": false,
+    "hiddenTests": false,
+    "publicCustomBenchmark": true,
+    "productStudioPath": false
+  },
+  "summary": {
+    "passedTasks": 3,
+    "totalTasks": 3,
+    "passedChecks": 24,
+    "totalChecks": 24,
+    "providerCalls": 0
+  },
+  "results": [
+    {
+      "id": "catch-stars",
+      "name": "Catch the Stars game state",
+      "promptSha256": "2d18e0e7b64abb5f0a048440e8a1372d5412c893a56b259a9ed0301517c3ebce",
+      "codeSha256": "a8856d2912b1331e7534313730cb7a8629b7d144beff547677a0e0ea62e5b6ba",
+      "provider": {
+        "kind": "replay",
+        "calls": 0
+      },
+      "passed": true,
+      "checks": [
+        {
+          "name": "catch",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 10,
+            "lives": 3,
+            "level": 1,
+            "status": "playing"
+          },
+          "actual": {
+            "score": 10,
+            "lives": 3,
+            "level": 1,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "level-up",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 50,
+            "lives": 3,
+            "level": 2,
+            "status": "playing"
+          },
+          "actual": {
+            "score": 50,
+            "lives": 3,
+            "level": 2,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "second-level",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 100,
+            "lives": 2,
+            "level": 3,
+            "status": "playing"
+          },
+          "actual": {
+            "score": 100,
+            "lives": 2,
+            "level": 3,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "miss",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 20,
+            "lives": 2,
+            "level": 1,
+            "status": "playing"
+          },
+          "actual": {
+            "score": 20,
+            "lives": 2,
+            "level": 1,
+            "status": "playing"
+          }
+        },
+        {
+          "name": "game-over",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          },
+          "actual": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          }
+        },
+        {
+          "name": "terminal-catch",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          },
+          "actual": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          }
+        },
+        {
+          "name": "terminal-miss",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          },
+          "actual": {
+            "score": 50,
+            "lives": 0,
+            "level": 2,
+            "status": "over"
+          }
+        },
+        {
+          "name": "unknown",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "score": 30,
+            "lives": 2,
+            "level": 1,
+            "status": "playing"
+          },
+          "actual": {
+            "score": 30,
+            "lives": 2,
+            "level": 1,
+            "status": "playing"
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "focus-timer",
+      "name": "Focus timer state",
+      "promptSha256": "61ef6b5ee9645d90f5a3d3080d154f311b9be4fc07c079375251058b8a379743",
+      "codeSha256": "2f5da9eb9742c18618e3bf605ccc945298f641faf89f851132c2c750b66b0abc",
+      "provider": {
+        "kind": "replay",
+        "calls": 0
+      },
+      "passed": true,
+      "checks": [
+        {
+          "name": "start",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 60,
+            "status": "running"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 60,
+            "status": "running"
+          }
+        },
+        {
+          "name": "tick",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 43,
+            "status": "running"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 43,
+            "status": "running"
+          }
+        },
+        {
+          "name": "clamp",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          }
+        },
+        {
+          "name": "exact-end",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          }
+        },
+        {
+          "name": "paused-tick",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 30,
+            "status": "paused"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 30,
+            "status": "paused"
+          }
+        },
+        {
+          "name": "pause",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 30,
+            "status": "paused"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 30,
+            "status": "paused"
+          }
+        },
+        {
+          "name": "restart-done",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 0,
+            "status": "done"
+          }
+        },
+        {
+          "name": "reset",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "duration": 60,
+            "remaining": 60,
+            "status": "idle"
+          },
+          "actual": {
+            "duration": 60,
+            "remaining": 60,
+            "status": "idle"
+          }
+        }
+      ],
+      "error": null
+    },
+    {
+      "id": "quiz-score",
+      "name": "Quiz scoring and feedback",
+      "promptSha256": "a2cbbc321e277388dcd02c8c442d96e925e0c0f8298b38bd011764314f8d4257",
+      "codeSha256": "a91dad3f6f798b484544b69ae67e07166bc0aa41321b2dd001254d375795a134",
+      "provider": {
+        "kind": "replay",
+        "calls": 0
+      },
+      "passed": true,
+      "checks": [
+        {
+          "name": "empty",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 0,
+            "total": 0,
+            "percent": 0,
+            "feedback": []
+          },
+          "actual": {
+            "correct": 0,
+            "total": 0,
+            "percent": 0,
+            "feedback": []
+          }
+        },
+        {
+          "name": "normalize",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          },
+          "actual": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "missing",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": false,
+                "answered": false
+              }
+            ]
+          },
+          "actual": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": false,
+                "answered": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "empty-supplied",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          },
+          "actual": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "zero",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          },
+          "actual": {
+            "correct": 1,
+            "total": 1,
+            "percent": 100,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "incorrect",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": false,
+                "answered": true
+              }
+            ]
+          },
+          "actual": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": false,
+                "answered": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "round-and-order",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 1,
+            "total": 3,
+            "percent": 33,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              },
+              {
+                "id": "b",
+                "correct": false,
+                "answered": false
+              },
+              {
+                "id": "c",
+                "correct": false,
+                "answered": true
+              }
+            ]
+          },
+          "actual": {
+            "correct": 1,
+            "total": 3,
+            "percent": 33,
+            "feedback": [
+              {
+                "id": "a",
+                "correct": true,
+                "answered": true
+              },
+              {
+                "id": "b",
+                "correct": false,
+                "answered": false
+              },
+              {
+                "id": "c",
+                "correct": false,
+                "answered": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "inherited-name",
+          "passed": true,
+          "correct": true,
+          "inputsUnchanged": true,
+          "freshResult": true,
+          "expected": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "toString",
+                "correct": false,
+                "answered": false
+              }
+            ]
+          },
+          "actual": {
+            "correct": 0,
+            "total": 1,
+            "percent": 0,
+            "feedback": [
+              {
+                "id": "toString",
+                "correct": false,
+                "answered": false
+              }
+            ]
+          }
+        }
+      ],
+      "error": null
+    }
+  ],
+  "limitations": [
+    "Custom public three-task corpus authored for this demo, not an independent or obscure third-party benchmark.",
+    "Logical unit checks do not establish full application quality, child usability, visual quality, educational value, or safety.",
+    "CLI is the same kind of provider available to GraphCode, but this harness does not exercise the product Studio/API or preserved coding-review-apply pipeline.",
+    "One attempt per task, no reranking or repairs. No competing product was measured. Model/default/account configuration and service state can affect replication.",
+    "No billed cost is inferred from token usage; no provider tokenizer or price configuration is assumed."
+  ]
+}

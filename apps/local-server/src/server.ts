@@ -1,12 +1,15 @@
 import { fileURLToPath } from "node:url";
+import path from "node:path";
 import cors from "@fastify/cors";
 import Fastify from "fastify";
 import { ZodError } from "zod";
 import { resolveAgentFeatureFlags, resolveDbPath, resolveRepoRoot, resolveServerHost, resolveServerPort, type AgentFeatureFlags } from "./config";
 import { registerApiRoutes } from "./routes";
 import { WorkspaceRuntime } from "./workspace";
+import { registerStudioRoutes } from "./studio/routes";
+import { StudioService } from "./studio/service";
 
-export async function buildServer(options: { dbPath?: string; seedSelf?: boolean; selfRootPath?: string; agentFeatureFlags?: AgentFeatureFlags } = {}) {
+export async function buildServer(options: { dbPath?: string; seedSelf?: boolean; selfRootPath?: string; agentFeatureFlags?: AgentFeatureFlags; studioDataPath?: string } = {}) {
   const runtime = new WorkspaceRuntime(
     options.dbPath ?? resolveDbPath(),
     options.selfRootPath ?? resolveRepoRoot(),
@@ -24,12 +27,6 @@ export async function buildServer(options: { dbPath?: string; seedSelf?: boolean
     origin: true
   });
 
-  await registerApiRoutes(app, runtime);
-
-  app.addHook("onClose", async () => {
-    runtime.close();
-  });
-
   app.setErrorHandler((error, _request, reply) => {
     const caughtError = error as Error & { statusCode?: number };
     const zodError = caughtError instanceof ZodError ? caughtError : null;
@@ -41,6 +38,15 @@ export async function buildServer(options: { dbPath?: string; seedSelf?: boolean
         : caughtError.message
     });
   });
+
+  await registerApiRoutes(app, runtime);
+  await registerStudioRoutes(app, new StudioService(options.studioDataPath ?? process.env.SPROUT_DATA_PATH ?? path.join(resolveRepoRoot(), ".graphcode", "studio")));
+
+  app.addHook("onClose", async () => {
+    runtime.close();
+  });
+
+
 
   return app;
 }

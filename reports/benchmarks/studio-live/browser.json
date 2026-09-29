@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "name": "Studio generated timer browser replay",
+  "generatedAt": "2026-09-29T12:14:46.522Z",
+  "projectId": "fbd382ab-88e7-48dc-9774-8a049b6d492a",
+  "browser": "Chromium",
+  "sandbox": "allow-scripts (no allow-same-origin)",
+  "mockedClock": true,
+  "providerCalls": 0,
+  "checks": [
+    {
+      "name": "initial-time",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "counts-down-after-start",
+      "passed": true,
+      "evidence": "04:58"
+    },
+    {
+      "name": "pause-keeps-count",
+      "passed": true,
+      "evidence": "🚀\n太空专注计时器\n\n准备出发，专心完成你的太空任务！\n\n任务倒计时\n\n剩余时间（mm:ss，分钟:秒）\n\n04:58\n\n已暂停\n\n开始\n暂停\n重置\n任务进度\n\n芽芽帮你保留了进度，点击“开始”继续。\n\n任务已暂停，剩余时间已保留。\n\n操作说明\n\n点击“开始”执行任务；点击“暂停”保留当前进度；点击“重置”恢复初始时长并停止。倒计时归零会显示“任务完成”，重置后就能再玩一轮。\n\n可以用 Tab 键选择按钮，再按回车键或空格键操作。"
+    },
+    {
+      "name": "reset-restores-duration",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "reset-stays-stopped",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "reaches-zero",
+      "passed": true,
+      "evidence": "00:00"
+    },
+    {
+      "name": "completion-feedback",
+      "passed": true,
+      "evidence": "任务完成"
+    },
+    {
+      "name": "replay-after-completion",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "no-runtime-errors",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no-network-requests",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "passed": true,
+  "limitations": [
+    "One generated timer artifact; browser checks do not establish overall generation success rate.",
+    "Clock is controlled to make timing behavior deterministic; no model output or generated source is edited.",
+    "This validates the generated iframe artifact, not the full Studio UI or original advanced coding workflow."
+  ]
+}

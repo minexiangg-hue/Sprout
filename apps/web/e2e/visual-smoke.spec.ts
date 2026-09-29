@@ -15,7 +15,7 @@ test("empty workspace stays focused and viewport-safe", async ({ page }, testInf
 
   for (const viewport of viewports) {
     await page.setViewportSize(viewport);
-    await page.goto("/");
+    await page.goto("/#expert");
     await expect(page.getByRole("heading", { name: "Open a workspace to begin" })).toBeVisible();
     await expect(page.locator(".left-panel")).toBeHidden();
     await expect(page.locator(".right-panel")).toBeHidden();
@@ -54,7 +54,7 @@ test("current workspace remains stable across primary user-visible states", asyn
 
   for (const viewport of viewports) {
     await page.setViewportSize(viewport);
-    await page.goto("/");
+    await page.goto("/#expert");
     await expect(page.locator(".brand-lockup h1")).toHaveText(project.name);
     await expect(page.locator(".canvas-panel")).toBeVisible();
     await expectLoadedWorkspace(page);
@@ -71,7 +71,7 @@ test("current workspace remains stable across primary user-visible states", asyn
   }
 
   await page.setViewportSize(viewports[0]);
-  await page.goto("/");
+  await page.goto("/#expert");
   await expectLoadedWorkspace(page);
   await expect(page.getByRole("button", { name: "Reset self workspace", exact: true })).toHaveClass(/button--ghost/);
   await expect(page.locator(".index-state-badge.unavailable")).toBeVisible();
@@ -158,7 +158,7 @@ test("system dark theme colors the complete shell", async ({ page }, testInfo) =
     { key: canvasSessionKey, id: projectId }
   );
   await page.setViewportSize(viewports[0]);
-  await page.goto("/");
+  await page.goto("/#expert");
   await expectLoadedWorkspace(page);
   await expect(page.locator("html")).toHaveAttribute("data-theme", "system");
   await expect(page.locator(".tree-row.selected")).toBeVisible();

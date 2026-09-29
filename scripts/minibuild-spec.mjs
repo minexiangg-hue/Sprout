@@ -1,0 +1,51 @@
+/** Frozen, public task corpus. Tests are authored before generation; no model fixes/retries. */
+export const tasks = [
+  {
+    id: 'catch-stars',
+    name: 'Catch the Stars game state',
+    spec: `Implement global function stepGame(state, event). State has {score,lives,level,status}; status is 'playing' or 'over'. Do not mutate either input. Return a new object. If status is over, return unchanged values. During playing: event.type catch adds 10 points; miss subtracts one life, clamped to zero; unknown events do nothing. Level is always floor(score/50)+1 after a playing event. If lives reaches zero set status over. Initial values are valid nonnegative integers, initial lives at least 1 unless already over.`,
+    functionName: 'stepGame',
+    cases: [
+      ['catch', [{score:0,lives:3,level:1,status:'playing'},{type:'catch'}], {score:10,lives:3,level:1,status:'playing'}],
+      ['level-up', [{score:40,lives:3,level:1,status:'playing'},{type:'catch'}], {score:50,lives:3,level:2,status:'playing'}],
+      ['second-level', [{score:90,lives:2,level:2,status:'playing'},{type:'catch'}], {score:100,lives:2,level:3,status:'playing'}],
+      ['miss', [{score:20,lives:3,level:1,status:'playing'},{type:'miss'}], {score:20,lives:2,level:1,status:'playing'}],
+      ['game-over', [{score:50,lives:1,level:2,status:'playing'},{type:'miss'}], {score:50,lives:0,level:2,status:'over'}],
+      ['terminal-catch', [{score:50,lives:0,level:2,status:'over'},{type:'catch'}], {score:50,lives:0,level:2,status:'over'}],
+      ['terminal-miss', [{score:50,lives:0,level:2,status:'over'},{type:'miss'}], {score:50,lives:0,level:2,status:'over'}],
+      ['unknown', [{score:30,lives:2,level:1,status:'playing'},{type:'dance'}], {score:30,lives:2,level:1,status:'playing'}],
+    ],
+  },
+  {
+    id: 'focus-timer',
+    name: 'Focus timer state',
+    spec: `Implement global function stepTimer(state, event), never mutating either input and returning a new object. State is {duration,remaining,status}, integer seconds with duration >=1; status is idle, running, paused, or done. start: if remaining>0 set running, else leave done. pause: running becomes paused, other statuses unchanged. reset: remaining=duration,status=idle. tick with seconds a nonnegative integer: only running subtracts seconds from remaining, clamped to zero, changing status to done at zero. Unknown events leave values unchanged.`,
+    functionName: 'stepTimer',
+    cases: [
+      ['start', [{duration:60,remaining:60,status:'idle'},{type:'start'}], {duration:60,remaining:60,status:'running'}],
+      ['tick', [{duration:60,remaining:50,status:'running'},{type:'tick',seconds:7}], {duration:60,remaining:43,status:'running'}],
+      ['clamp', [{duration:60,remaining:4,status:'running'},{type:'tick',seconds:100}], {duration:60,remaining:0,status:'done'}],
+      ['exact-end', [{duration:60,remaining:4,status:'running'},{type:'tick',seconds:4}], {duration:60,remaining:0,status:'done'}],
+      ['paused-tick', [{duration:60,remaining:30,status:'paused'},{type:'tick',seconds:9}], {duration:60,remaining:30,status:'paused'}],
+      ['pause', [{duration:60,remaining:30,status:'running'},{type:'pause'}], {duration:60,remaining:30,status:'paused'}],
+      ['restart-done', [{duration:60,remaining:0,status:'done'},{type:'start'}], {duration:60,remaining:0,status:'done'}],
+      ['reset', [{duration:60,remaining:0,status:'done'},{type:'reset'}], {duration:60,remaining:60,status:'idle'}],
+    ],
+  },
+  {
+    id: 'quiz-score',
+    name: 'Quiz scoring and feedback',
+    spec: `Implement global function gradeQuiz(questions,answers), never mutating either input. questions is an array of {id,correctAnswer}; answers is an object keyed by id. Return {correct,total,percent,feedback}. For matching normalize a value by String(value).trim().toLowerCase(). An answer is missing only when id is not an own property of answers, so empty strings and 0 may be valid supplied values. Each feedback entry in original question order is {id,correct,answered}. Percent is Math.round(correct/total*100), or 0 for an empty quiz. Missing answers are incorrect even when correctAnswer is empty.`,
+    functionName: 'gradeQuiz',
+    cases: [
+      ['empty', [[],{}], {correct:0,total:0,percent:0,feedback:[]}],
+      ['normalize', [[{id:'a',correctAnswer:'Mars'}],{a:' MARS '}], {correct:1,total:1,percent:100,feedback:[{id:'a',correct:true,answered:true}]}],
+      ['missing', [[{id:'a',correctAnswer:''}],{}], {correct:0,total:1,percent:0,feedback:[{id:'a',correct:false,answered:false}]}],
+      ['empty-supplied', [[{id:'a',correctAnswer:''}],{a:''}], {correct:1,total:1,percent:100,feedback:[{id:'a',correct:true,answered:true}]}],
+      ['zero', [[{id:'a',correctAnswer:0}],{a:0}], {correct:1,total:1,percent:100,feedback:[{id:'a',correct:true,answered:true}]}],
+      ['incorrect', [[{id:'a',correctAnswer:'Mars'}],{a:'Venus'}], {correct:0,total:1,percent:0,feedback:[{id:'a',correct:false,answered:true}]}],
+      ['round-and-order', [[{id:'a',correctAnswer:'x'},{id:'b',correctAnswer:'y'},{id:'c',correctAnswer:'z'}],{a:'x',c:'q'}], {correct:1,total:3,percent:33,feedback:[{id:'a',correct:true,answered:true},{id:'b',correct:false,answered:false},{id:'c',correct:false,answered:true}]}],
+      ['inherited-name', [[{id:'toString',correctAnswer:'x'}],{}], {correct:0,total:1,percent:0,feedback:[{id:'toString',correct:false,answered:false}]}],
+    ],
+  },
+];

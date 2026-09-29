@@ -1,0 +1,10 @@
+
+ RUN  v3.2.6 /home/ubuntu/CodexWorkspace/GraphCode/apps/local-server
+
+ ✓ src/studio/studio.test.ts (8 tests) 144ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  20:44:10
+   Duration  558ms (transform 95ms, setup 0ms, collect 176ms, tests 144ms, environment 0ms, prepare 64ms)
+

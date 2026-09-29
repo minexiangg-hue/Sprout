@@ -1,0 +1,63 @@
+
+> @graphcode/web@0.1.0 test:ui /home/ubuntu/CodexWorkspace/GraphCode/apps/web
+> playwright test -- studio.spec.ts
+
+
+Running 10 tests using 1 worker
+
+(node:175672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/agent-sidebar.spec.ts:8:1 › planning and coding sidebar completes the proposal-first example flow (11.7s)
+  -   2 e2e/codex-workflow.spec.ts:34:3 › real Codex provider › completes planning, coding, review, and implementation
+  ✓   3 e2e/studio.spec.ts:18:1 › home is branded, responsive and supports settings and learning (1.3s)
+  ✘   4 e2e/studio.spec.ts:37:1 › star game builds through UI, plays to win, edits, exports and survives reload (5.6s)
+(node:176334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 e2e/studio.spec.ts:72:1 › pet responds to care, bounded state, celebration and reset (2.9s)
+  ✓   6 e2e/studio.spec.ts:90:1 › timer starts, pauses without losing time, resets and completes (2.4s)
+  ✓   7 e2e/studio.spec.ts:109:1 › generation error is visible and retry recovers without silently switching mode (952ms)
+  ✓   8 e2e/visual-smoke.spec.ts:13:1 › empty workspace stays focused and viewport-safe (1.7s)
+  -   9 e2e/visual-smoke.spec.ts:33:1 › current workspace remains stable across primary user-visible states
+  -  10 e2e/visual-smoke.spec.ts:145:1 › system dark theme colors the complete shell
+
+
+  1) e2e/studio.spec.ts:37:1 › star game builds through UI, plays to win, edits, exports and survives reload 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: /涂上我的颜色/ }) resolved to 2 elements:
+        1) <button class="module-card module-1 built">…</button> aka getByRole('button', { name: '02' })
+        2) <button class="module-card module-2 built">…</button> aka getByRole('button', { name: '03' })
+
+    Call log:
+      - waiting for getByRole('button', { name: /涂上我的颜色/ })
+
+
+      55 |  await page.getByLabel('主题色').fill('#123456');
+      56 |  await expect.poll(()=>frame.locator('html').evaluate(el=>getComputedStyle(el).getPropertyValue('--accent'))).toBe('#123456');
+    > 57 |  await page.getByRole('button',{name:/涂上我的颜色/}).click();
+         |                                                 ^
+      58 |  await expect(page.locator('.source-view pre')).toContainText('background');
+      59 |  await page.getByRole('button',{name:'作品预览',exact:true}).click();
+      60 |  const downloadPromise=page.waitForEvent('download');
+        at /home/ubuntu/CodexWorkspace/GraphCode/apps/web/e2e/studio.spec.ts:57:49
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../../.graphcode/playwright-results/studio-star-game-builds-th-64fd2-exports-and-survives-reload/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../../.graphcode/playwright-results/studio-star-game-builds-th-64fd2-exports-and-survives-reload/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../../.graphcode/playwright-results/studio-star-game-builds-th-64fd2-exports-and-survives-reload/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace ../../.graphcode/playwright-results/studio-star-game-builds-th-64fd2-exports-and-survives-reload/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    e2e/studio.spec.ts:37:1 › star game builds through UI, plays to win, edits, exports and survives reload 
+  3 skipped
+  6 passed (28.6s)
+/home/ubuntu/CodexWorkspace/GraphCode/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @graphcode/web@0.1.0 test:ui: `playwright test -- studio.spec.ts`
+Exit status 1

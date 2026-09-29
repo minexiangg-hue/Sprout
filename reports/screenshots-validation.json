@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-09-29T12:47:12.888Z",
+  "base": "http://127.0.0.1:5173",
+  "project": "4801815c-ac46-40f6-868f-2a59765f4b04",
+  "previewFonts": [
+    {
+      "family": "SproutPreview",
+      "status": "loaded"
+    }
+  ],
+  "embeddedLicense": true,
+  "systemFontOverride": false
+}

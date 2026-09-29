@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+(node:187647) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/codex-workflow.spec.ts:34:3 › real Codex provider › completes planning, coding, review, and implementation (33.2s)
+
+  1 passed (34.0s)

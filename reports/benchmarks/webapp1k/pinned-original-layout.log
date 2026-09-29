@@ -1,0 +1,30 @@
+
+> test
+> react-scripts test --env=jsdom --watchAll=false --testPathPattern src/react/blogging --runInBand --json --outputFile /home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/pinned-original-layout.json
+
+
+FAIL src/react/blogging/addAltTextToImage.test.js
+  ● Test suite failed to run
+
+    Cannot find module './AddAltTextToImage' from 'src/react/blogging/addAltTextToImage.test.js'
+
+      4 | import fetchMock from 'fetch-mock';
+      5 | import '@testing-library/jest-dom';
+    > 6 | import CMS from './AddAltTextToImage';
+        | ^
+      7 |
+      8 | afterEach(() => {
+      9 |   fetchMock.reset();
+
+      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)
+      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:6:1)
+
+PASS src/react/blogging/addCanonicalUrl.test.js
+PASS src/react/blogging/addComment.test.js
+
+Test Suites: 1 failed, 2 passed, 3 total
+Tests:       4 passed, 4 total
+Snapshots:   0 total
+Time:        0.91 s, estimated 2 s
+Ran all test suites matching /src\/react\/blogging/i.
+Test results written to: ../../../home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/webapp1k/pinned-original-layout.json

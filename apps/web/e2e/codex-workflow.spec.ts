@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { expect, test, type Locator, type Page, type TestInfo } from "@playwright/test";
@@ -38,6 +38,13 @@ test.describe("real Codex provider", () => {
     const exampleRoot = join(temporaryRoot, "review-proposal-lab");
     cpSync(resolve(repoRoot, "examples/review-proposal-lab"), exampleRoot, { recursive: true });
     const implementationPath = join(exampleRoot, "src/discount.ts");
+    // The upstream example already includes the requested fix. Reintroduce the
+    // missing guard only in this disposable fixture so the real coding test
+    // measures a meaningful repair instead of asking the model for a no-op.
+    const exampleSource = readFileSync(implementationPath, "utf8");
+    const brokenSource = exampleSource.replace(/  if \(input\.subtotal < 50\) \{\n    return 0;\n  \}\n\n/, "");
+    expect(brokenSource).not.toBe(exampleSource);
+    writeFileSync(implementationPath, brokenSource, "utf8");
     const originalSource = readFileSync(implementationPath, "utf8");
 
     try {
@@ -72,7 +79,7 @@ test.describe("real Codex provider", () => {
         { key: canvasSessionKey, id: projectId }
       );
       await page.setViewportSize({ width: 1440, height: 1000 });
-      await page.goto("/");
+      await page.goto("/#expert");
       await expect(page.locator(".workspace-flow")).toBeVisible();
 
       await page.getByRole("button", { name: "Settings", exact: true }).click();

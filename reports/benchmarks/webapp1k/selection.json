@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-29T12:34:55.581412+00:00",
+  "repository": "https://github.com/onekq/WebApp1k",
+  "commit": "00895306c81d5329904827b65f4a933ce3cb8746",
+  "license": "MIT, Copyright (c) 2024 onekq",
+  "corpus": "tests/ (base WebApp1K, not duo_tests)",
+  "corpusCount": 1000,
+  "selection": "Sort all tests/**/*.test.js by repository-relative POSIX path using Unicode/codepoint order, take first 3 before generation",
+  "model": "gpt-6-astra",
+  "attemptsPerTask": 1,
+  "repairs": 0,
+  "promptPolicy": "Exact generate_implementation first-attempt prompt; official benchmark supplies tests to model",
+  "selected": [
+    {
+      "path": "tests/react/blogging/addAltTextToImage.test.js",
+      "sha256": "5084139d4b378bcc15ab0b3fce763eec421aca0c2ccbee3b86b3a178f3732e44",
+      "implementationFilename": "addAltTextToImage.js"
+    },
+    {
+      "path": "tests/react/blogging/addCanonicalUrl.test.js",
+      "sha256": "18b9cf4abfedd5d002960da21ebbd201c19c255b29ec160e1f0a0c747385df65",
+      "implementationFilename": "addCanonicalUrl.js"
+    },
+    {
+      "path": "tests/react/blogging/addComment.test.js",
+      "sha256": "d7c26368f0bc0185a8981b904ccc4c3131ab7dc7cac083adb960636d30826645",
+      "implementationFilename": "addComment.js"
+    }
+  ],
+  "upstreamFiles": [
+    {
+      "path": "LICENSE",
+      "sha256": "dc2450dcbc7966fe9d48eaeece8ef5f3bb359eb437a4bf07a250d449bed67782"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b89c41437ed06a312b8364b2f28f6299069038c765af02d17c32693c892bd019"
+    },
+    {
+      "path": "generate_code.py",
+      "sha256": "f8b9363341188f10aa6cd8ba3021b00edf44a532ff1f9274da3f26b536554fbb"
+    },
+    {
+      "path": "run_eval.py",
+      "sha256": "070edd96aff8dfeea16eb44c2868b60368d8f75f67aab89d1d2a9c1508000fd7"
+    },
+    {
+      "path": "staging/package.json",
+      "sha256": "7c2a618e90819bc1bc21caf25e2d8d9dea5e298b2d9ca392b1b6488871098987"
+    }
+  ]
+}

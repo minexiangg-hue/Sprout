@@ -1,0 +1,17 @@
+
+> sprout-studio@0.1.0 typecheck /home/ubuntu/CodexWorkspace/GraphCode
+> corepack pnpm -r --if-present typecheck
+
+Scope: 6 of 7 workspace projects
+packages/graph-model typecheck$ tsc -p tsconfig.json --noEmit
+packages/graph-model typecheck: Done
+apps/web typecheck$ tsc -p tsconfig.json --noEmit
+packages/agent-runtime typecheck$ tsc -p tsconfig.json --noEmit
+packages/graph-query typecheck$ tsc -p tsconfig.json --noEmit
+packages/parser typecheck$ tsc -p tsconfig.json --noEmit
+packages/graph-query typecheck: Done
+packages/parser typecheck: Done
+packages/agent-runtime typecheck: Done
+apps/web typecheck: Done
+apps/local-server typecheck$ tsc -p tsconfig.json --noEmit
+apps/local-server typecheck: Done

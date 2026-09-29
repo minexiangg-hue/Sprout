@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:36:30.629Z",
+  "commit": "00895306c81d5329904827b65f4a933ce3cb8746",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "medium",
+  "cliVersion": "codex-cli 0.153.4",
+  "attemptsPerTask": 1,
+  "repairAttempts": 0,
+  "officialPrompt": true,
+  "officialTestsVisibleToModel": true,
+  "tasks": [
+    {
+      "path": "tests/react/blogging/addAltTextToImage.test.js",
+      "testSha256": "5084139d4b378bcc15ab0b3fce763eec421aca0c2ccbee3b86b3a178f3732e44",
+      "promptSha256": "62c6fe5da19ea9751d263630003696a2f5dd2c32f7cac8940667baacb5cb05dc",
+      "providerCalls": 1,
+      "latencyMs": 13044,
+      "exitCode": 0,
+      "usage": {
+        "input_tokens": 9146,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 284,
+        "reasoning_output_tokens": 0
+      },
+      "toolCalls": 0,
+      "implementationSha256": "ecf08af56061cc61aa1ad5d5b618557b79de4e19a37cfe1fba54ee44a43c1571",
+      "responseSha256": "ecf08af56061cc61aa1ad5d5b618557b79de4e19a37cfe1fba54ee44a43c1571"
+    },
+    {
+      "path": "tests/react/blogging/addCanonicalUrl.test.js",
+      "testSha256": "18b9cf4abfedd5d002960da21ebbd201c19c255b29ec160e1f0a0c747385df65",
+      "promptSha256": "550dc4ece4afcf205d98cf1d42dc63a7332a8c4de0496e99e11adb48197e680e",
+      "providerCalls": 1,
+      "latencyMs": 13133,
+      "exitCode": 0,
+      "usage": {
+        "input_tokens": 9146,
+        "cached_input_tokens": 7040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 292,
+        "reasoning_output_tokens": 0
+      },
+      "toolCalls": 0,
+      "implementationSha256": "4087629bc24bfb55a0e252ce001cdce11a10e778ae8bf026e9515936b67dfc24",
+      "responseSha256": "4087629bc24bfb55a0e252ce001cdce11a10e778ae8bf026e9515936b67dfc24"
+    },
+    {
+      "path": "tests/react/blogging/addComment.test.js",
+      "testSha256": "d7c26368f0bc0185a8981b904ccc4c3131ab7dc7cac083adb960636d30826645",
+      "promptSha256": "3a10a25b83a1d85c4bcb14349336001dceb32a77ed2f6ef00e13505c95714beb",
+      "providerCalls": 1,
+      "latencyMs": 14334,
+      "exitCode": 0,
+      "usage": {
+        "input_tokens": 9118,
+        "cached_input_tokens": 7040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 288,
+        "reasoning_output_tokens": 0
+      },
+      "toolCalls": 0,
+      "implementationSha256": "c58c279823793130ea8799e03fd44899ba13aa277d9656ddb6b02893d9be5169",
+      "responseSha256": "c58c279823793130ea8799e03fd44899ba13aa277d9656ddb6b02893d9be5169"
+    }
+  ],
+  "limitations": [
+    "Only the preselected first three of 1000 base tasks; selection is deterministic, not statistically representative.",
+    "Uses the official first-attempt prompt and code extractor, replacing hosted inference with Codex CLI. This is not the official full leaderboard run.",
+    "No completion is manually edited or regenerated after seeing tests."
+  ]
+}

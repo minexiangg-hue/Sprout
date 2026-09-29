@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:26:21.126Z",
+  "name": "Studio revised timer browser check",
+  "originalProjectId": "fbd382ab-88e7-48dc-9774-8a049b6d492a",
+  "artifactSha256": "3ad380af29774530fd2d59b3a3895f36b7f5f6df87a93565aad1a68c7284b20f",
+  "providerCalls": 0,
+  "browser": "Chromium",
+  "sandbox": "allow-scripts",
+  "controlledClock": true,
+  "checks": [
+    {
+      "name": "initial-value",
+      "passed": true,
+      "evidence": "05:00"
+    },
+    {
+      "name": "original-countdown-works",
+      "passed": true,
+      "evidence": "04:58"
+    },
+    {
+      "name": "browser-execution",
+      "passed": false,
+      "evidence": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('iframe').contentFrame().getByRole('button', { name: '加一分钟', exact: true })\u001b[22m\n"
+    },
+    {
+      "name": "no-runtime-errors",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "no-network-requests",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "passed": false
+}

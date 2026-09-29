@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:21:03.652Z",
+  "base": "http://127.0.0.1:5173",
+  "provider": "demo (no model calls)",
+  "createdProjectIds": [
+    "06558162-6684-466f-a411-87445f932269",
+    "8675e665-e43e-4b77-b865-05892ab2fd73"
+  ],
+  "checks": [
+    {
+      "name": "browser-back-restores-matching-project",
+      "passed": true,
+      "evidence": "http://127.0.0.1:5173/#project=06558162-6684-466f-a411-87445f932269"
+    },
+    {
+      "name": "browser-forward-restores-matching-project",
+      "passed": true,
+      "evidence": "http://127.0.0.1:5173/#project=8675e665-e43e-4b77-b865-05892ab2fd73"
+    },
+    {
+      "name": "late-build-response-cannot-switch-project",
+      "passed": true,
+      "evidence": "http://127.0.0.1:5173/#project=06558162-6684-466f-a411-87445f932269"
+    },
+    {
+      "name": "demo-free-text-modification-disabled",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "learning-note-survives-reload",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "self-check-survives-reload",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "dialog-receives-focus",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "dialog-tab-is-contained",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "escape-restores-trigger-focus",
+      "passed": true,
+      "evidence": null
+    },
+    {
+      "name": "no-runtime-errors",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

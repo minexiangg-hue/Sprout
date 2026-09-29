@@ -1,0 +1,17 @@
+{
+  "caseAliasEnabled": true,
+  "aliases": [
+    {
+      "from": "addAltTextToImage.js",
+      "to": "AddAltTextToImage.js",
+      "sha256": "ecf08af56061cc61aa1ad5d5b618557b79de4e19a37cfe1fba54ee44a43c1571"
+    }
+  ],
+  "testFiles": [
+    "react/blogging/addAltTextToImage.test.js",
+    "react/blogging/addCanonicalUrl.test.js",
+    "react/blogging/addComment.test.js"
+  ],
+  "testFilesEdited": false,
+  "generatedCodeEdited": false
+}

@@ -1,0 +1,33 @@
+{
+  "documents": [
+    {
+      "file": "docs/pitch-deck.pdf",
+      "pages": 14,
+      "readableChinese": true,
+      "noMissingGlyphs": true,
+      "pageSizesPt": [
+        [
+          960,
+          540
+        ]
+      ]
+    },
+    {
+      "file": "docs/business-plan.pdf",
+      "pages": 5,
+      "readableChinese": true,
+      "noMissingGlyphs": true,
+      "pageSizesPt": [
+        [
+          596,
+          843
+        ]
+      ]
+    }
+  ],
+  "powerpoint": {
+    "slides": 14,
+    "speakerNotes": true,
+    "format": "visual-fidelity image slides; editable source HTML/Markdown supplied"
+  }
+}

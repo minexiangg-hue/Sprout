@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "Studio live focus timer smoke",
+  "generatedAt": "2026-09-29T12:11:41.112Z",
+  "boundary": "StudioService -> StudioModels -> actual Codex CLI; no mocked provider",
+  "provider": "codex",
+  "repairAttempts": 0,
+  "attemptsPerOperation": 1,
+  "operations": [
+    {
+      "operation": "plan",
+      "latencyMs": 30481,
+      "passed": true,
+      "moduleCount": 4
+    },
+    {
+      "operation": "build",
+      "moduleId": "space-scene",
+      "kind": "html",
+      "latencyMs": 20747,
+      "passed": true
+    },
+    {
+      "operation": "build",
+      "moduleId": "space-style",
+      "kind": "css",
+      "latencyMs": 53287,
+      "passed": true
+    },
+    {
+      "operation": "build",
+      "moduleId": "timer-engine",
+      "kind": "js",
+      "latencyMs": 37255,
+      "passed": true
+    },
+    {
+      "operation": "build",
+      "moduleId": "mission-feedback",
+      "kind": "js",
+      "latencyMs": 29952,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "One self-selected task; no claim of general success rate.",
+    "Service generation is measured here; browser behavior is a separate report.",
+    "No external paid API provider or competitor was measured."
+  ],
+  "summary": {
+    "plannedModules": 4,
+    "builtModules": 4,
+    "providerCalls": 5,
+    "totalLatencyMs": 171722
+  },
+  "requestedModel": "CLI default with --ignore-user-config",
+  "cliVersion": "codex-cli 0.153.4"
+}

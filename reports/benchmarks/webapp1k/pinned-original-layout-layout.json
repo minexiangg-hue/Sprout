@@ -1,0 +1,11 @@
+{
+  "caseAliasEnabled": false,
+  "aliases": [],
+  "testFiles": [
+    "react/blogging/addAltTextToImage.test.js",
+    "react/blogging/addCanonicalUrl.test.js",
+    "react/blogging/addComment.test.js"
+  ],
+  "testFilesEdited": false,
+  "generatedCodeEdited": false
+}

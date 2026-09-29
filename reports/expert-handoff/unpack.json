@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-09-29T12:25:15.120Z",
+  "input": "/home/ubuntu/CodexWorkspace/GraphCode/reports/benchmarks/studio-live/project.json",
+  "directory": "/tmp/sprout-handoff-browser-JpBcMd/workspace",
+  "files": [
+    "src/scene.html",
+    "src/style.css",
+    "src/timer.js",
+    "src/feedback.js"
+  ],
+  "builtModules": 4,
+  "exactSources": [
+    {
+      "file": "scene.html",
+      "identical": true
+    },
+    {
+      "file": "style.css",
+      "identical": true
+    },
+    {
+      "file": "timer.js",
+      "identical": true
+    },
+    {
+      "file": "feedback.js",
+      "identical": true
+    }
+  ]
+}

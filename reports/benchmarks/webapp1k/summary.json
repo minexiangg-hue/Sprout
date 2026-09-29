@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "name": "WebApp1K base corpus fixed first-three sample",
+  "generatedAt": "2026-09-29T12:46:49.977Z",
+  "repository": "https://github.com/onekq/WebApp1k",
+  "commit": "00895306c81d5329904827b65f4a933ce3cb8746",
+  "license": "MIT, Copyright (c) 2024 onekq",
+  "selection": "Sort all tests/**/*.test.js by repository-relative POSIX path using Unicode/codepoint order, take first 3 before generation",
+  "corpusSize": 1000,
+  "sampleSize": 3,
+  "model": "gpt-6-astra",
+  "reasoningEffort": "medium",
+  "cliVersion": "codex-cli 0.153.4",
+  "providerCalls": 3,
+  "generationLatencyMs": 40511,
+  "attemptsPerTask": 1,
+  "codeRepairAttempts": 0,
+  "testsVisibleToModel": true,
+  "machine": {
+    "node": "v24.18.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "headline": "Strict original layout with pinned dependencies: 2 suites pass, 1 is blocked by upstream import capitalization; diagnostic with a byte-identical filename alias: 3 suites / 6 original assertions pass.",
+  "stages": [
+    {
+      "id": "official-layout",
+      "label": "Official latest dependencies, untouched filename layout",
+      "suitesPassed": 0,
+      "suitesFailed": 3,
+      "testsExecuted": 0,
+      "assertionsPassed": 0,
+      "assertionsFailed": 0,
+      "loadBlockedSuites": 3,
+      "suites": [
+        {
+          "file": "addCanonicalUrl.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'\n\n    Require stack:\n      node_modules/react-router-dom/dist/index.js\n      src/react/blogging/addCanonicalUrl.test.js\n\n      1 | import React from 'react';\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n    > 3 | import { MemoryRouter } from 'react-router-dom';\n        | ^\n      4 | import fetchMock from 'fetch-mock';\n      5 | import '@testing-library/jest-dom';\n      6 | import CMS from './addCanonicalUrl';\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)\n      at Object.<anonymous> (src/react/blogging/addCanonicalUrl.test.js:3:1)\n"
+        },
+        {
+          "file": "addAltTextToImage.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'\n\n    Require stack:\n      node_modules/react-router-dom/dist/index.js\n      src/react/blogging/addAltTextToImage.test.js\n\n      1 | import React from 'react';\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n    > 3 | import { MemoryRouter } from 'react-router-dom';\n        | ^\n      4 | import fetchMock from 'fetch-mock';\n      5 | import '@testing-library/jest-dom';\n      6 | import CMS from './AddAltTextToImage';\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)\n      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:3:1)\n"
+        },
+        {
+          "file": "addComment.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'react-router/dom' from 'node_modules/react-router-dom/dist/index.js'\n\n    Require stack:\n      node_modules/react-router-dom/dist/index.js\n      src/react/blogging/addComment.test.js\n\n      1 | import React from 'react';\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n    > 3 | import { MemoryRouter } from 'react-router-dom';\n        | ^\n      4 | import fetchMock from 'fetch-mock';\n      5 | import '@testing-library/jest-dom';\n      6 | import App from './addComment';\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/react-router-dom/dist/index.js:38:18)\n      at Object.<anonymous> (src/react/blogging/addComment.test.js:3:1)\n      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)\n      at runJest (node_modules/@jest/core/build/runJest.js:404:19)\n      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)\n      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)\n"
+        }
+      ],
+      "rawJson": "official-layout.json",
+      "rawLog": "official-layout.log"
+    },
+    {
+      "id": "compatible-dependencies-original-layout",
+      "label": "Intermediate dependency setup, node-fetch peer missing",
+      "suitesPassed": 0,
+      "suitesFailed": 3,
+      "testsExecuted": 0,
+      "assertionsPassed": 0,
+      "assertionsFailed": 0,
+      "loadBlockedSuites": 3,
+      "suites": [
+        {
+          "file": "addCanonicalUrl.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'\n\n    Require stack:\n      node_modules/fetch-mock/cjs/server.js\n      src/react/blogging/addCanonicalUrl.test.js\n\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n      3 | import { MemoryRouter } from 'react-router-dom';\n    > 4 | import fetchMock from 'fetch-mock';\n        | ^\n      5 | import '@testing-library/jest-dom';\n      6 | import CMS from './addCanonicalUrl';\n      7 |\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)\n      at Object.<anonymous> (src/react/blogging/addCanonicalUrl.test.js:4:1)\n"
+        },
+        {
+          "file": "addComment.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'\n\n    Require stack:\n      node_modules/fetch-mock/cjs/server.js\n      src/react/blogging/addComment.test.js\n\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n      3 | import { MemoryRouter } from 'react-router-dom';\n    > 4 | import fetchMock from 'fetch-mock';\n        | ^\n      5 | import '@testing-library/jest-dom';\n      6 | import App from './addComment';\n      7 |\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)\n      at Object.<anonymous> (src/react/blogging/addComment.test.js:4:1)\n"
+        },
+        {
+          "file": "addAltTextToImage.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module 'node-fetch' from 'node_modules/fetch-mock/cjs/server.js'\n\n    Require stack:\n      node_modules/fetch-mock/cjs/server.js\n      src/react/blogging/addAltTextToImage.test.js\n\n      2 | import { render, screen, act, fireEvent } from '@testing-library/react';\n      3 | import { MemoryRouter } from 'react-router-dom';\n    > 4 | import fetchMock from 'fetch-mock';\n        | ^\n      5 | import '@testing-library/jest-dom';\n      6 | import CMS from './AddAltTextToImage';\n      7 |\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (node_modules/fetch-mock/cjs/server.js:9:10)\n      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:4:1)\n      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)\n      at runJest (node_modules/@jest/core/build/runJest.js:404:19)\n      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)\n      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)\n"
+        }
+      ],
+      "rawJson": "compatible-dependencies-original-layout.json",
+      "rawLog": "compatible-dependencies-original-layout.log"
+    },
+    {
+      "id": "pinned-original-layout",
+      "label": "Pinned compatible dependencies, untouched official filename layout",
+      "suitesPassed": 2,
+      "suitesFailed": 1,
+      "testsExecuted": 4,
+      "assertionsPassed": 4,
+      "assertionsFailed": 0,
+      "loadBlockedSuites": 1,
+      "suites": [
+        {
+          "file": "addAltTextToImage.test.js",
+          "status": "failed",
+          "assertions": [],
+          "loadError": "  ● Test suite failed to run\n\n    Cannot find module './AddAltTextToImage' from 'src/react/blogging/addAltTextToImage.test.js'\n\n      4 | import fetchMock from 'fetch-mock';\n      5 | import '@testing-library/jest-dom';\n    > 6 | import CMS from './AddAltTextToImage';\n        | ^\n      7 |\n      8 | afterEach(() => {\n      9 |   fetchMock.reset();\n\n      at Resolver.resolveModule (node_modules/jest-resolve/build/resolver.js:324:11)\n      at Object.<anonymous> (src/react/blogging/addAltTextToImage.test.js:6:1)\n"
+        },
+        {
+          "file": "addCanonicalUrl.test.js",
+          "status": "passed",
+          "assertions": [
+            {
+              "title": "successfully adds a canonical URL to a post",
+              "status": "passed"
+            },
+            {
+              "title": "fails to add a canonical URL to a post due to server error",
+              "status": "passed"
+            }
+          ],
+          "loadError": null
+        },
+        {
+          "file": "addComment.test.js",
+          "status": "passed",
+          "assertions": [
+            {
+              "title": "successfully adds a comment to a post",
+              "status": "passed"
+            },
+            {
+              "title": "fails to add a comment to a post",
+              "status": "passed"
+            }
+          ],
+          "loadError": null
+        }
+      ],
+      "rawJson": "pinned-original-layout.json",
+      "rawLog": "pinned-original-layout.log"
+    },
+    {
+      "id": "pinned-import-mapping",
+      "label": "Pinned dependencies + byte-identical case-sensitive import filename alias",
+      "suitesPassed": 3,
+      "suitesFailed": 0,
+      "testsExecuted": 6,
+      "assertionsPassed": 6,
+      "assertionsFailed": 0,
+      "loadBlockedSuites": 0,
+      "suites": [
+        {
+          "file": "addCanonicalUrl.test.js",
+          "status": "passed",
+          "assertions": [
+            {
+              "title": "successfully adds a canonical URL to a post",
+              "status": "passed"
+            },
+            {
+              "title": "fails to add a canonical URL to a post due to server error",
+              "status": "passed"
+            }
+          ],
+          "loadError": null
+        },
+        {
+          "file": "addComment.test.js",
+          "status": "passed",
+          "assertions": [
+            {
+              "title": "successfully adds a comment to a post",
+              "status": "passed"
+            },
+            {
+              "title": "fails to add a comment to a post",
+              "status": "passed"
+            }
+          ],
+          "loadError": null
+        },
+        {
+          "file": "addAltTextToImage.test.js",
+          "status": "passed",
+          "assertions": [
+            {
+              "title": "successfully adds alt text to an image",
+              "status": "passed"
+            },
+            {
+              "title": "fails to add alt text to an image due to server error",
+              "status": "passed"
+            }
+          ],
+          "loadError": null
+        }
+      ],
+      "rawJson": "pinned-import-mapping.json",
+      "rawLog": "pinned-import-mapping.log"
+    }
+  ],
+  "provenance": {
+    "tests": [
+      {
+        "path": "tests/react/blogging/addAltTextToImage.test.js",
+        "expectedSha256": "5084139d4b378bcc15ab0b3fce763eec421aca0c2ccbee3b86b3a178f3732e44",
+        "savedSha256": "5084139d4b378bcc15ab0b3fce763eec421aca0c2ccbee3b86b3a178f3732e44"
+      },
+      {
+        "path": "tests/react/blogging/addCanonicalUrl.test.js",
+        "expectedSha256": "18b9cf4abfedd5d002960da21ebbd201c19c255b29ec160e1f0a0c747385df65",
+        "savedSha256": "18b9cf4abfedd5d002960da21ebbd201c19c255b29ec160e1f0a0c747385df65"
+      },
+      {
+        "path": "tests/react/blogging/addComment.test.js",
+        "expectedSha256": "d7c26368f0bc0185a8981b904ccc4c3131ab7dc7cac083adb960636d30826645",
+        "savedSha256": "d7c26368f0bc0185a8981b904ccc4c3131ab7dc7cac083adb960636d30826645"
+      }
+    ],
+    "implementations": [
+      {
+        "path": "tests/react/blogging/addAltTextToImage.test.js",
+        "expectedSha256": "ecf08af56061cc61aa1ad5d5b618557b79de4e19a37cfe1fba54ee44a43c1571",
+        "savedSha256": "ecf08af56061cc61aa1ad5d5b618557b79de4e19a37cfe1fba54ee44a43c1571"
+      },
+      {
+        "path": "tests/react/blogging/addCanonicalUrl.test.js",
+        "expectedSha256": "4087629bc24bfb55a0e252ce001cdce11a10e778ae8bf026e9515936b67dfc24",
+        "savedSha256": "4087629bc24bfb55a0e252ce001cdce11a10e778ae8bf026e9515936b67dfc24"
+      },
+      {
+        "path": "tests/react/blogging/addComment.test.js",
+        "expectedSha256": "c58c279823793130ea8799e03fd44899ba13aa277d9656ddb6b02893d9be5169",
+        "savedSha256": "c58c279823793130ea8799e03fd44899ba13aa277d9656ddb6b02893d9be5169"
+      }
+    ],
+    "allTestsUnchanged": true,
+    "allGeneratedImplementationsUnchanged": true,
+    "compatiblePackageSha256": "3b7c33230af5bc2caf646b70a960696e8bbdcf13c3eccc380257dd7a45342ea1",
+    "compatibleLockSha256": "329847e2ab466a371aefc58d1a6346cb0e6dc4f165ea118089b8b20827fd7b6f"
+  },
+  "limitations": [
+    "Deterministic first 3/1000 tasks are all blogging React components; the sample is small and not representative of the benchmark or child-created applications.",
+    "Official prompts deliberately include all tests. These are not hidden tests.",
+    "Codex CLI replaces only inference; its system context and generation limits do not exactly reproduce the upstream hosted generator. Do not compare this diagnostic to the full leaderboard.",
+    "The unmodified latest environment executed zero assertions due to dependency-loading failures; those failures are retained and are not counted as model errors.",
+    "The filename alias diagnostic is an explicitly disclosed Linux compatibility adaptation, not the untouched upstream file layout. No tests, assertions, task prompts or generated code bodies were changed.",
+    "No retries, repairs, task substitutions, competing products, population success-rate estimates, or production Studio/API coding claims."
+  ]
+}

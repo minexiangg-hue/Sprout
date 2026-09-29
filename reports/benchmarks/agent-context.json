@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-29T12:09:39.647Z",
+  "machine": {
+    "platform": "linux",
+    "architecture": "x64",
+    "nodeVersion": "v24.18.0",
+    "cpuCount": 4
+  },
+  "fixtureCount": 6,
+  "workUnitCount": 18,
+  "fixtures": [
+    {
+      "fixtureId": "cross-package",
+      "behavior": "cross_package",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-049esub",
+          "scale": "large",
+          "ownedNodes": 1,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2159,
+          "legacyCodingEstimatedTokens": 1989,
+          "legacyReviewEstimatedTokens": 1937,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1300,
+            "medium": 1913,
+            "large": 1989
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1249,
+            "medium": 1862,
+            "large": 1937
+          },
+          "codingTokenReductionRatio": -0.08547008547008547,
+          "reviewTokenReductionRatio": -0.11461022199277233,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-16wt5bc",
+          "scale": "large",
+          "ownedNodes": 1,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2153,
+          "legacyCodingEstimatedTokens": 1578,
+          "legacyReviewEstimatedTokens": 1526,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1304,
+            "medium": 1502,
+            "large": 1578
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1253,
+            "medium": 1451,
+            "large": 1526
+          },
+          "codingTokenReductionRatio": -0.3643852978453739,
+          "reviewTokenReductionRatio": -0.4108781127129751,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-04nqb0y",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 4366,
+          "legacyCodingEstimatedTokens": 1506,
+          "legacyReviewEstimatedTokens": 1455,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1308,
+            "medium": 1506,
+            "large": 1649
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1257,
+            "medium": 1455,
+            "large": 1598
+          },
+          "codingTokenReductionRatio": -1.899070385126162,
+          "reviewTokenReductionRatio": -2.0006872852233677,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-0c21ti7",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 4359,
+          "legacyCodingEstimatedTokens": 1916,
+          "legacyReviewEstimatedTokens": 1865,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1303,
+            "medium": 1916,
+            "large": 2059
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1252,
+            "medium": 1865,
+            "large": 2008
+          },
+          "codingTokenReductionRatio": -1.2750521920668059,
+          "reviewTokenReductionRatio": -1.3372654155495978,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-04vtxey",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1685,
+          "legacyCodingEstimatedTokens": 904,
+          "legacyReviewEstimatedTokens": 853,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 904,
+            "medium": 904,
+            "large": 1069
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 853,
+            "medium": 853,
+            "large": 1018
+          },
+          "codingTokenReductionRatio": -0.8639380530973452,
+          "reviewTokenReductionRatio": -0.9753810082063306,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    },
+    {
+      "fixtureId": "cycle",
+      "behavior": "cycle",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-1iofr9j",
+          "scale": "small",
+          "ownedNodes": 2,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1704,
+          "legacyCodingEstimatedTokens": 1100,
+          "legacyReviewEstimatedTokens": 1041,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1100,
+            "medium": 1100,
+            "large": 1182
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1041,
+            "medium": 1041,
+            "large": 1124
+          },
+          "codingTokenReductionRatio": -0.5490909090909091,
+          "reviewTokenReductionRatio": -0.6368876080691642,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-1io5wv4",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1736,
+          "legacyCodingEstimatedTokens": 1074,
+          "legacyReviewEstimatedTokens": 1016,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1074,
+            "medium": 1074,
+            "large": 1179
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1015,
+            "medium": 1016,
+            "large": 1120
+          },
+          "codingTokenReductionRatio": -0.6163873370577281,
+          "reviewTokenReductionRatio": -0.7086614173228346,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    },
+    {
+      "fixtureId": "independent-leaves",
+      "behavior": "independent_leaves",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-04nyoq0",
+          "scale": "small",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1033,
+          "legacyCodingEstimatedTokens": 386,
+          "legacyReviewEstimatedTokens": 337,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 386,
+            "medium": 386,
+            "large": 414
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 337,
+            "medium": 338,
+            "large": 365
+          },
+          "codingTokenReductionRatio": -1.6761658031088082,
+          "reviewTokenReductionRatio": -2.065281899109792,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-0pjecum",
+          "scale": "small",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1033,
+          "legacyCodingEstimatedTokens": 386,
+          "legacyReviewEstimatedTokens": 337,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 386,
+            "medium": 386,
+            "large": 414
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 337,
+            "medium": 338,
+            "large": 365
+          },
+          "codingTokenReductionRatio": -1.6761658031088082,
+          "reviewTokenReductionRatio": -2.065281899109792,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-148u5r7",
+          "scale": "small",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1033,
+          "legacyCodingEstimatedTokens": 386,
+          "legacyReviewEstimatedTokens": 337,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 386,
+            "medium": 386,
+            "large": 414
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 337,
+            "medium": 338,
+            "large": 365
+          },
+          "codingTokenReductionRatio": -1.6761658031088082,
+          "reviewTokenReductionRatio": -2.065281899109792,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-1pu5qhl",
+          "scale": "small",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1033,
+          "legacyCodingEstimatedTokens": 386,
+          "legacyReviewEstimatedTokens": 337,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 386,
+            "medium": 386,
+            "large": 414
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 337,
+            "medium": 338,
+            "large": 365
+          },
+          "codingTokenReductionRatio": -1.6761658031088082,
+          "reviewTokenReductionRatio": -2.065281899109792,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-12kaen5",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2348,
+          "legacyCodingEstimatedTokens": 1419,
+          "legacyReviewEstimatedTokens": 1370,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1276,
+            "medium": 1419,
+            "large": 1521
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1227,
+            "medium": 1370,
+            "large": 1472
+          },
+          "codingTokenReductionRatio": -0.6546863988724454,
+          "reviewTokenReductionRatio": -0.7138686131386861,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    },
+    {
+      "fixtureId": "parent-integration",
+      "behavior": "parent_integration",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-1w1xblr",
+          "scale": "large",
+          "ownedNodes": 2,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2222,
+          "legacyCodingEstimatedTokens": 857,
+          "legacyReviewEstimatedTokens": 799,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 780,
+            "medium": 780,
+            "large": 857
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 722,
+            "medium": 722,
+            "large": 799
+          },
+          "codingTokenReductionRatio": -1.5927654609101516,
+          "reviewTokenReductionRatio": -1.780976220275344,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-0t0dj4i",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2475,
+          "legacyCodingEstimatedTokens": 1739,
+          "legacyReviewEstimatedTokens": 1681,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1276,
+            "medium": 1739,
+            "large": 1837
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1218,
+            "medium": 1681,
+            "large": 1780
+          },
+          "codingTokenReductionRatio": -0.42323174238067857,
+          "reviewTokenReductionRatio": -0.4723378941106484,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    },
+    {
+      "fixtureId": "same-file-functions",
+      "behavior": "same_file_functions",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-12x2evc",
+          "scale": "small",
+          "ownedNodes": 2,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1593,
+          "legacyCodingEstimatedTokens": 1255,
+          "legacyReviewEstimatedTokens": 1206,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1255,
+            "medium": 1255,
+            "large": 1287
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1206,
+            "medium": 1206,
+            "large": 1238
+          },
+          "codingTokenReductionRatio": -0.2693227091633466,
+          "reviewTokenReductionRatio": -0.3208955223880597,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-1020hgn",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 1955,
+          "legacyCodingEstimatedTokens": 1274,
+          "legacyReviewEstimatedTokens": 1225,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1274,
+            "medium": 1274,
+            "large": 1355
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1224,
+            "medium": 1225,
+            "large": 1305
+          },
+          "codingTokenReductionRatio": -0.5345368916797488,
+          "reviewTokenReductionRatio": -0.5959183673469388,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    },
+    {
+      "fixtureId": "shared-interface",
+      "behavior": "shared_interface",
+      "workUnits": [
+        {
+          "workUnitId": "work-unit-0jij82f",
+          "scale": "large",
+          "ownedNodes": 2,
+          "sourceReads": 2,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2134,
+          "legacyCodingEstimatedTokens": 833,
+          "legacyReviewEstimatedTokens": 781,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 754,
+            "medium": 754,
+            "large": 833
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 702,
+            "medium": 703,
+            "large": 781
+          },
+          "codingTokenReductionRatio": -1.5618247298919568,
+          "reviewTokenReductionRatio": -1.732394366197183,
+          "fullProjectReadUsedByCompiler": false
+        },
+        {
+          "workUnitId": "work-unit-0srz155",
+          "scale": "medium",
+          "ownedNodes": 1,
+          "sourceReads": 1,
+          "exactOwnedSourceOrVisibleFailure": true,
+          "withinBudget": true,
+          "isolatedEstimatedTokens": 2080,
+          "legacyCodingEstimatedTokens": 1326,
+          "legacyReviewEstimatedTokens": 1275,
+          "legacyCodingEstimatedTokensByScale": {
+            "small": 1278,
+            "medium": 1326,
+            "large": 1429
+          },
+          "legacyReviewEstimatedTokensByScale": {
+            "small": 1227,
+            "medium": 1275,
+            "large": 1377
+          },
+          "codingTokenReductionRatio": -0.5686274509803921,
+          "reviewTokenReductionRatio": -0.6313725490196078,
+          "fullProjectReadUsedByCompiler": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "isolatedEstimatedTokens": 37101,
+    "legacyCodingEstimatedTokens": 20314,
+    "legacyReviewEstimatedTokens": 19378,
+    "codingTokenReductionRatio": -0.8263758983951954,
+    "reviewTokenReductionRatio": -0.9145938693363608,
+    "allOwnedSourceVisible": true,
+    "allContextsWithinBudget": true,
+    "fullProjectReadUsedByCompiler": false,
+    "providerCalls": 0
+  },
+  "limitations": [
+    "Shadow mode compiles contexts and legacy prompts but never invokes a provider or measures model quality.",
+    "Token counts use the conservative four-characters-per-token fallback because no provider tokenizer is configured for this fixture run.",
+    "Synthetic fixture source preserves declared line ranges; it is structural context evidence rather than a production task corpus."
+  ]
+}
