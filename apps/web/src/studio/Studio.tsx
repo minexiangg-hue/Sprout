@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  ArrowDown,
   ArrowLeft,
   ArrowRight,
   BookOpen,
@@ -19,6 +18,7 @@ import {
   Lightbulb,
   LoaderCircle,
   Maximize2,
+  Menu,
   MoreHorizontal,
   Play,
   Plus,
@@ -130,7 +130,9 @@ export default function Studio() {
     [view, setView] = useState<"preview" | "code">("preview");
   const [settings, setSettings] = useState(false),
     [lesson, setLesson] = useState(false),
-    [revision, setRevision] = useState("");
+    [revision, setRevision] = useState(""),
+    [navOpen, setNavOpen] = useState(false),
+    [guideOpen, setGuideOpen] = useState(false);
   const [checked, setChecked] = useState(false),
     [previewKey, setPreviewKey] = useState(0),
     [full, setFull] = useState(false);
@@ -256,6 +258,17 @@ export default function Studio() {
       if (previous?.isConnected) previous.focus();
     };
   }, [settings, lesson]);
+  useEffect(() => {
+    if (!navOpen && !guideOpen) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setNavOpen(false);
+        setGuideOpen(false);
+      }
+    };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [navOpen, guideOpen]);
   function saveLearning(nextChecked: boolean, nextReflection: string) {
     setChecked(nextChecked);
     setReflection(nextReflection);
@@ -390,9 +403,54 @@ export default function Studio() {
   );
   return (
     <div className="sprout-app">
-      <aside className="studio-nav">
+      <nav className="rail rail-left" aria-label="主导航">
         <button
-          className="studio-brand"
+          className="rail-toggle"
+          onClick={() => setNavOpen((v) => !v)}
+          aria-label={navOpen ? "收起导航" : "展开导航"}
+          aria-expanded={navOpen}
+        >
+          <Menu size={20} />
+        </button>
+        <button className="rail-item" onClick={() => home()} aria-label="创作空间">
+          <Sparkles size={20} />
+        </button>
+        <button
+          className="rail-item"
+          onClick={() => home("projects")}
+          aria-label="我的作品"
+        >
+          <FolderOpen size={20} />
+        </button>
+        <button
+          className="rail-item"
+          onClick={() => setLesson(true)}
+          aria-label="灵感小课堂"
+        >
+          <BookOpen size={20} />
+        </button>
+        <button
+          className="rail-item"
+          onClick={() => setSettings(true)}
+          aria-label="创作设置"
+        >
+          <Settings2 size={20} />
+        </button>
+        <a className="rail-item" href="#expert" aria-label="GraphCode 专业模式">
+          <Code2 size={20} />
+        </a>
+      </nav>
+      {navOpen && (
+        <aside className="studio-nav drawer">
+          <button
+            className="drawer-close"
+            aria-label="收起导航"
+            onClick={() => setNavOpen(false)}
+          >
+            <X size={18} />
+          </button>
+          <button
+            className="studio-brand"
           onClick={() => home()}
           aria-label="芽芽工坊首页"
         >
@@ -465,7 +523,8 @@ export default function Studio() {
             <span /> 本地创作 · 作品由你保管
           </div>
         </div>
-      </aside>
+          </aside>
+        )}
       <div className="studio-body">
         <header className="studio-topbar">
           <div className="breadcrumb">
@@ -506,14 +565,10 @@ export default function Studio() {
           <main className="home-scroll">
             <div className="home-heading">
               <div>
-                <span className="eyebrow">
-                  A LITTLE IDEA. A WORLD OF POSSIBILITIES.
-                </span>
                 <h1>
                   {tab === "projects"
                     ? "我的灵感，正在生长。"
                     : "嗨，今天想创造点什么？"}
-                  <span> ✳</span>
                 </h1>
                 <p>
                   {tab === "projects"
@@ -521,50 +576,9 @@ export default function Studio() {
                     : "一个游戏、一位小伙伴，或一个让生活更有趣的小工具。"}
                 </p>
               </div>
-              <span className="date-badge">MAKE · PLAY · LEARN</span>
             </div>
             {tab === "start" && (
               <>
-                <section className="idea-hero">
-                  <div className="hero-copy">
-                    <span className="hero-tag">
-                      <span /> 想法不需要很大，好奇心就够了
-                    </span>
-                    <h2>
-                      小小灵感，
-                      <br />
-                      大有<span>可能。</span>
-                      <svg viewBox="0 0 160 15">
-                        <path d="M3 11Q75-5 155 8" />
-                      </svg>
-                    </h2>
-                    <p>
-                      告诉芽芽你的想法。我们一起把它拆成
-                      <br />
-                      小积木，一步步搭成可以玩的作品。
-                    </p>
-                    <a href="#idea" onClick={() => textarea.current?.focus()}>
-                      开始我的第一次创造 <ArrowDown size={15} />
-                    </a>
-                  </div>
-                  <div className="hero-scene">
-                    <div className="orbit orbit-one" />
-                    <div className="orbit orbit-two" />
-                    <span className="scene-star one">✧</span>
-                    <span className="scene-star two">✳</span>
-                    <div className="floating-note note-code">
-                      <Code2 size={22} />
-                      <span>想法 + 一点魔法</span>
-                    </div>
-                    <Mascot className="hero-mascot" />
-                    <div className="floating-note note-game">
-                      <Gamepad2 size={24} />
-                      <span>是你做的耶！</span>
-                      <CheckCircle2 size={15} />
-                    </div>
-                    <span className="scene-dot" />
-                  </div>
-                </section>
                 <section className="idea-box" id="idea">
                   <div className="idea-box-title">
                     <span>
@@ -640,69 +654,7 @@ export default function Studio() {
                       : "AI 会读取你的创作描述并生成模块。请不要输入姓名、学校或联系方式。"}
                   </p>
                 </section>
-                <section className="template-section">
-                  <div className="section-heading">
-                    <div>
-                      <h2>
-                        从一颗灵感种子开始 <span>↘</span>
-                      </h2>
-                      <p>挑一个喜欢的，改成你自己的。</p>
-                    </div>
-                    <span className="tiny-badge">3 个可试玩起点</span>
-                  </div>
-                  <div className="template-grid">
-                    {templates.map((t) => (
-                      <button
-                        key={t.id}
-                        className={"template-card " + t.color}
-                        onClick={() => {
-                          setTemplate(t.id);
-                          setPrompt(t.prompt);
-                          textarea.current?.focus();
-                          document
-                            .querySelector("#idea")
-                            ?.scrollIntoView({
-                              behavior: "smooth",
-                              block: "center",
-                            });
-                        }}
-                      >
-                        <ProjectArt type={t.id} />
-                        <div className="template-info">
-                          <span>
-                            <t.icon size={13} />
-                            {t.category}
-                          </span>
-                          <h3>
-                            {t.title}
-                            <ArrowRight size={19} />
-                          </h3>
-                          <p>{t.description}</p>
-                          <div className="template-footer">
-                            <span>入门友好</span>
-                            <span>
-                              选择这颗种子 <Plus size={12} />
-                            </span>
-                          </div>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </section>
-                <section className="learn-strip">
-                  <div className="learn-icon">
-                    <Layers3 size={25} />
-                  </div>
-                  <div>
-                    <strong>不只做出来，也能看明白。</strong>
-                    <p>
-                      每块积木都有自己的任务。点开它，看看代码如何让想法动起来。
-                    </p>
-                  </div>
-                  <button onClick={() => setLesson(true)}>
-                    看看怎么玩 <ArrowRight size={16} />
-                  </button>
-                </section>
+
               </>
             )}
             {tab === "projects" && (
@@ -737,7 +689,6 @@ export default function Studio() {
             )}
             <footer className="home-footer">
               <Sprout size={16} /> 好奇心是你最棒的超能力。
-              <span>SPROUT · BUILT ON GRAPHCODE</span>
             </footer>
           </main>
         ) : (
@@ -1144,8 +1095,35 @@ export default function Studio() {
           </main>
         )}
       </div>
-      <aside className="guide-sidebar">
-        <div className="guide-header">
+      <nav className="rail rail-right" aria-label="芽芽小助手">
+        <button
+          className="rail-toggle"
+          onClick={() => setGuideOpen((v) => !v)}
+          aria-label={guideOpen ? "收起小助手" : "展开小助手"}
+          aria-expanded={guideOpen}
+        >
+          <Lightbulb size={20} />
+        </button>
+      </nav>
+      {(navOpen || guideOpen) && (
+        <div
+          className="drawer-backdrop"
+          onClick={() => {
+            setNavOpen(false);
+            setGuideOpen(false);
+          }}
+        />
+      )}
+      {guideOpen && (
+        <aside className="guide-sidebar drawer">
+          <button
+            className="drawer-close"
+            aria-label="收起小助手"
+            onClick={() => setGuideOpen(false)}
+          >
+            <X size={18} />
+          </button>
+          <div className="guide-header">
           <span>
             <span className="guide-avatar">
               <Mascot />
@@ -1157,7 +1135,6 @@ export default function Studio() {
               </small>
             </div>
           </span>
-          <Sparkles size={18} />
         </div>
         <div className="guide-content">
           <div className="guide-welcome">
@@ -1248,7 +1225,8 @@ export default function Studio() {
         <div className="guide-footer">
           <Heart size={14} /> 按你的节奏，每一步都算数。
         </div>
-      </aside>
+          </aside>
+        )}
       {busy && (
         <div className="working-toast" role="status">
           <LoaderCircle size={17} className="spin" />
