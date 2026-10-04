@@ -1,0 +1,252 @@
+{
+  "series": "A3",
+  "language": "en",
+  "totalBaseDuration": 80,
+  "segments": [
+    {
+      "id": "A3a",
+      "file": "sprout-feature-A3a-idea-8s.html",
+      "base": 8,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 2,
+          "content": "Home scene entrance",
+          "keyword": null
+        },
+        {
+          "start": 2,
+          "dur": 3,
+          "content": "Idea typed into the box",
+          "keyword": null
+        },
+        {
+          "start": 5,
+          "dur": 2.5,
+          "content": "Input takes focus",
+          "keyword": null
+        },
+        {
+          "start": 7.5,
+          "dur": 0.5,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "Just write the idea.",
+      "localizedDisplay": false,
+      "illustration": false,
+      "sourceAssets": [
+        "Mascot.tsx",
+        "studio.css tokens",
+        "lucide icons (ISC)"
+      ]
+    },
+    {
+      "id": "A3b",
+      "file": "sprout-feature-A3b-blocks-12s.html",
+      "base": 12,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 2,
+          "content": "Idea bubble flies to Sprout",
+          "keyword": null
+        },
+        {
+          "start": 2,
+          "dur": 4,
+          "content": "Bubble sprouts into four blocks",
+          "keyword": null
+        },
+        {
+          "start": 6,
+          "dur": 4,
+          "content": "Blocks line up with arrows",
+          "keyword": null
+        },
+        {
+          "start": 10,
+          "dur": 2,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "Every block does one small thing.",
+      "localizedDisplay": false,
+      "illustration": false,
+      "sourceAssets": [
+        "Mascot.tsx",
+        "studio.css tokens",
+        "block palette",
+        "lucide icons (ISC)"
+      ]
+    },
+    {
+      "id": "A3c",
+      "file": "sprout-feature-A3c-code-15s.html",
+      "base": 15,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 3,
+          "content": "Block 1: scene.html, empty stage",
+          "keyword": null
+        },
+        {
+          "start": 3,
+          "dur": 3,
+          "content": "Block 2: style.css, color arrives",
+          "keyword": null
+        },
+        {
+          "start": 6,
+          "dur": 3,
+          "content": "Block 3: main.js, stage moves",
+          "keyword": null
+        },
+        {
+          "start": 9,
+          "dur": 4,
+          "content": "Block 4: celebrate.js, 4 of 4 built",
+          "keyword": null
+        },
+        {
+          "start": 13,
+          "dur": 2,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "See every line. Know where the magic comes from.",
+      "localizedDisplay": true,
+      "illustration": false,
+      "sourceAssets": [
+        "apps/local-server/src/studio/templates.ts (scenes[star-catcher], css, starLogic, celebrate)",
+        "display copy localized to English; excerpts use … elisions"
+      ]
+    },
+    {
+      "id": "A3d",
+      "file": "sprout-feature-A3d-play-12s.html",
+      "base": 12,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 5,
+          "content": "Real game runs inside the safety dome",
+          "keyword": null
+        },
+        {
+          "start": 5,
+          "dur": 4,
+          "content": "Target 10 to 5, theme recolor",
+          "keyword": null
+        },
+        {
+          "start": 9,
+          "dur": 3,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "One number changes the whole world.",
+      "localizedDisplay": true,
+      "illustration": false,
+      "sourceAssets": [
+        "src/game-doc.html = templates.ts scenes[star-catcher] + css + starLogic + celebrate",
+        "display copy localized to English; demo autopilot driver marked in game-doc.html"
+      ]
+    },
+    {
+      "id": "A3e",
+      "file": "sprout-feature-A3e-export-8s.html",
+      "base": 8,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 2,
+          "content": "Export project clicked",
+          "keyword": null
+        },
+        {
+          "start": 2,
+          "dur": 3,
+          "content": "Project graduates into an offline page",
+          "keyword": null
+        },
+        {
+          "start": 5,
+          "dur": 3,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "Offline. Portable. Truly yours.",
+      "localizedDisplay": true,
+      "illustration": false,
+      "sourceAssets": [
+        "src/game-doc.html = templates.ts scenes[star-catcher] + css + starLogic + celebrate",
+        "display copy localized to English"
+      ]
+    },
+    {
+      "id": "A3f",
+      "file": "sprout-feature-A3f-expert-25s.html",
+      "base": 25,
+      "beats": [
+        {
+          "start": 0,
+          "dur": 4,
+          "content": "Switch into Expert mode",
+          "keyword": null
+        },
+        {
+          "start": 4,
+          "dur": 6,
+          "content": "Code graph canvas opens",
+          "keyword": null
+        },
+        {
+          "start": 10,
+          "dur": 6,
+          "content": "Project unbundles into a src file tree",
+          "keyword": null
+        },
+        {
+          "start": 16,
+          "dur": 6,
+          "content": "Agent run: Planned to Implemented",
+          "keyword": null
+        },
+        {
+          "start": 22,
+          "dur": 3,
+          "content": "Slogan card",
+          "keyword": null
+        }
+      ],
+      "slogan": "From first block to real development.",
+      "localizedDisplay": false,
+      "illustration": true,
+      "sourceAssets": [
+        "stylized illustration, not UI recording",
+        "real capabilities shown: code graph canvas, src file tree, agent run states",
+        "module file names from demoModules (scene.html/style.css/main.js/celebrate.js)"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": "A3g",
+      "reason": "Voice feature is roadmap-only in the product; skipped per spec (no fake features)."
+    }
+  ],
+  "recordUsage": "Open each segment as file:// with ?duration=<base>&record=1 and screen-record fullscreen; actual beat timings are logged to the console as JSON at playback end. Concatenate in order A3a(8s) A3b(12s) A3c(15s) A3d(12s) A3e(8s) A3f(25s). ?duration scales the whole timeline (verified range: 40%–110%); ?speed multiplies playback rate.",
+  "notes": [
+    "All on-screen copy is English; A3c/A3d/A3e show real product code/game with display copy localized (localizedDisplay).",
+    "A3f is a stylized illustration of real capabilities (code graph, src files, agent run states), not a UI recording (illustration).",
+    "Font: Inter variable (latin subset, wght 100–900) embedded as base64; lucide icons inlined (ISC license).",
+    "Mascot inlined from apps/web/src/studio/Mascot.tsx (happy/thinking), called 'Sprout' on screen."
+  ]
+}

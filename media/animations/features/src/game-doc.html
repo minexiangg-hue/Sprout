@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  Star Catcher demo runtime for A3d/A3e animations.
+  Assembled from apps/local-server/src/studio/templates.ts:
+    scenes["star-catcher"] + shared css + starLogic + celebrate (all verbatim logic).
+  Display copy localized to English for the competition video (manifest: localizedDisplay).
+  The only non-product addition is the demo recording driver at the bottom (clearly marked).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+:root { --accent: #7b9161; }
+*{box-sizing:border-box}body{margin:0;padding:0;background:#f8f5ed;color:#25443c;font-family:ui-rounded,system-ui,sans-serif}main{max-width:780px;margin:auto;padding:24px;text-align:center}h1{font-size:clamp(24px,5vw,36px);margin:10px 0}p{line-height:1.6;color:#647a70}.kicker{font-size:12px;letter-spacing:3px;font-weight:800}button{border:0;border-radius:16px;padding:12px 20px;background:var(--accent);color:#233e34;font:700 15px system-ui;cursor:pointer;box-shadow:0 3px 0 #0002}button:hover{filter:brightness(1.05)}button:focus-visible{outline:3px solid #347761;outline-offset:3px}button:disabled{opacity:.45;cursor:default}.row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;align-items:center}.pill{border:1px solid #dce5d8;border-radius:99px;background:#fff;padding:8px 16px;font-weight:700}.board{background:#edf4e5;border:2px solid #dce8d2;border-radius:26px;overflow:hidden;margin:20px auto;padding:20px}canvas{width:100%;max-width:680px;height:auto;display:block;margin:auto;border-radius:22px;background:#172d38;touch-action:none}#status{min-height:28px;font-weight:700}#pet{height:160px;transition:transform .2s}#pet svg{height:100%;width:auto}#pet.bounce{transform:translateY(-12px) rotate(-5deg)}.pet-flower,.pet-tired{display:none}#pet[data-state="bloom"] .pet-flower{display:block}#pet[data-state="tired"] .pet-tired{display:block}#pet[data-state="tired"] .pet-happy{display:none}.meters{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:20px auto;max-width:500px}.meter{text-align:left;font-size:13px}progress{display:block;width:100%;height:18px;accent-color:#75a777;margin-top:8px}#clock{font-size:clamp(54px,15vw,100px);font-variant-numeric:tabular-nums;letter-spacing:-4px;font-weight:800}#tree{height:110px}#tree svg{height:100%;width:auto}.tree-seedling,.tree-growing,.tree-grown{display:none}#tree[data-stage="seedling"] .tree-seedling,#tree[data-stage="growing"] .tree-growing,#tree[data-stage="grown"] .tree-grown{display:block}.fine{font-size:12px}#celebration{position:fixed;inset:0;pointer-events:none;display:grid;place-items:center;opacity:0;transition:opacity .2s}#celebration.show{opacity:1;background:#ffffff55}.celebration-card{width:230px;padding:12px 22px 20px;border-radius:28px;background:#fffdf3;box-shadow:0 12px 44px #25443c22}.celebration-card svg{width:100%;height:100px;display:block;margin:auto}.celebration-card strong{display:block;font-size:24px;margin-top:12px}.sound{font-size:12px;background:#e4eeda;margin-top:14px}@media(max-width:480px){main{padding:16px}.board{padding:10px}.row{gap:8px}button{padding:11px 15px}}@media(max-height:500px){main{padding:8px 14px}.kicker{font-size:9px;letter-spacing:2px}h1{font-size:20px;margin:3px 0}p{font-size:11px;line-height:1.45;margin:4px 0}.row{gap:7px}.pill{font-size:11px;padding:4px 12px}.board{margin:6px auto;padding:4px;border-width:1px;border-radius:18px}canvas{width:min(100%,280px);height:auto;max-height:140px;border-radius:13px}#status{min-height:18px;font-size:11px;margin:4px 0}button{font-size:12px;padding:8px 14px;border-radius:11px}.fine{font-size:10px;margin:3px 0}.sound{display:block;margin:5px auto 0;padding:3px 12px;font-size:10px}#pet{height:114px}.meters{margin:7px auto;gap:12px}.meter{font-size:11px}progress{height:12px;margin-top:5px}#tree{height:82px}#clock{font-size:48px;letter-spacing:-2px;line-height:1.05}.celebration-card{width:180px;padding:8px 18px 16px}.celebration-card svg{height:78px}.celebration-card strong{font-size:20px;margin-top:7px}}
+</style>
+</head>
+<body>
+<main><div class="kicker">SPROUT · PLAY LAB</div><h1>Star Catcher</h1><p>Move the basket with ← → or your finger to catch the falling stars.</p><div class="row"><span class="pill">Stars <output id="score">0</output> / <span id="target">10</span></span><span class="pill">Missed <output id="misses">0</output> / 5</span></div><div class="board"><canvas id="game" width="680" height="340" aria-label="Star-catching game, use the left and right arrow keys or touch to move the basket" tabindex="0"></canvas></div><p id="status" role="status">Ready? Press start and catch your first star.</p><button id="start">Start catching</button><p class="fine">Try it: tune the speed and target to design your challenge.</p></main>
+<script>
+window.SPROUT_CONFIG = { target: 10, speed: 1.15, accent: '#7b9161' };
+</script>
+<script>
+(() => {
+  const config = window.SPROUT_CONFIG;
+  const canvas = document.getElementById('game'), ctx = canvas.getContext('2d');
+  const scoreLabel = document.getElementById('score'), missesLabel = document.getElementById('misses');
+  const status = document.getElementById('status'), start = document.getElementById('start');
+  document.getElementById('target').textContent = config.target;
+  let x=340, score=0, misses=0, stars=[], running=false, last=0, spawn=0;
+  const keys = new Set();
+  function drawStar(cx,cy){ctx.beginPath();for(let point=0;point<10;point++){const angle=-Math.PI/2+point*Math.PI/5,radius=point%2===0?15:7;const px=cx+Math.cos(angle)*radius,py=cy+Math.sin(angle)*radius;if(point===0)ctx.moveTo(px,py);else ctx.lineTo(px,py)}ctx.closePath();ctx.fillStyle='#ffd46b';ctx.shadowColor='#f8c95e88';ctx.shadowBlur=12;ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#ffe9ab';ctx.lineWidth=1.5;ctx.stroke()}
+  function draw(){ctx.clearRect(0,0,680,340);ctx.fillStyle='#ffffff30';for(let i=0;i<36;i++){ctx.beginPath();ctx.arc((i*137)%680,(i*79)%300,1.5,0,Math.PI*2);ctx.fill()}for(const star of stars)drawStar(star.x,star.y);ctx.strokeStyle=config.accent;ctx.lineWidth=5;ctx.beginPath();ctx.ellipse(x,301,28,18,0,Math.PI,Math.PI*2);ctx.stroke();ctx.fillStyle=config.accent;ctx.beginPath();ctx.roundRect(x-42,298,84,22,8);ctx.fill();ctx.fillStyle='#4d4a36';ctx.beginPath();ctx.arc(x-13,305,2,0,Math.PI*2);ctx.arc(x+13,305,2,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#4d4a36';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,304,8,.3,Math.PI-.3);ctx.stroke()}
+  function end(won){running=false;start.disabled=false;start.textContent='Play again';status.textContent=won?'Amazing! You caught '+score+' stars.':'The stars slipped away. Watch where they fall and try again!';if(won)window.dispatchEvent(new Event('sprout:success'))}
+  function frame(time){const dt=Math.min((time-last)/1000,.04);last=time;if(running){if(keys.has('ArrowLeft'))x-=400*dt;if(keys.has('ArrowRight'))x+=400*dt;x=Math.max(42,Math.min(638,x));spawn+=dt;if(spawn>.85/config.speed){spawn=0;stars.push({x:28+Math.random()*624,y:10})}for(const star of stars){star.y+=95*config.speed*dt;if(star.y>=296&&star.y<330&&Math.abs(star.x-x)<53){star.y=999;score++;scoreLabel.textContent=score;window.dispatchEvent(new Event('sprout:point'))}else if(star.y>335&&star.y<900){star.y=999;misses++;missesLabel.textContent=misses}}stars=stars.filter(star=>star.y<900);if(score>=config.target)end(true);else if(misses>=5)end(false)}draw();requestAnimationFrame(frame)}
+  document.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();keys.add(event.key)}});document.addEventListener('keyup',event=>keys.delete(event.key));window.addEventListener('blur',()=>keys.clear());
+  function move(event){const rect=canvas.getBoundingClientRect();x=Math.max(42,Math.min(638,(event.clientX-rect.left)*680/rect.width))}canvas.addEventListener('pointerdown',event=>{canvas.setPointerCapture(event.pointerId);move(event)});canvas.addEventListener('pointermove',move);
+  start.addEventListener('click',()=>{x=340;score=0;misses=0;stars=[];spawn=0;scoreLabel.textContent='0';missesLabel.textContent='0';running=true;start.disabled=true;status.textContent='Follow the stars with your basket!';canvas.focus()});requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(() => {
+  const button=document.createElement('button');button.className='sound';button.textContent='Turn sound on';button.setAttribute('aria-pressed','false');document.querySelector('main').append(button);
+  const celebration=document.createElement('div');celebration.id='celebration';celebration.innerHTML="<div class=\"celebration-card\"><svg viewBox=\"0 0 220 120\" aria-hidden=\"true\"><path d=\"M110 13L127 49L166 54L138 81L145 119L110 101L75 119L82 81L54 54L93 49Z\" fill=\"#ffce65\" stroke=\"#e5a342\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M32 19L38 32L52 34L42 44L45 58L32 51L19 58L22 44L12 34L26 32ZM188 12L194 25L208 27L198 37L201 51L188 44L175 51L178 37L168 27L182 25Z\" fill=\"#a6c882\"/><path d=\"M24 85L32 93M37 80L40 90M181 82L174 94M194 89L183 97\" fill=\"none\" stroke=\"#ddac96\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M97 73Q110 87 123 73\" fill=\"none\" stroke=\"#785430\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"97\" cy=\"61\" r=\"3\" fill=\"#785430\"/><circle cx=\"123\" cy=\"61\" r=\"3\" fill=\"#785430\"/></svg><strong>You did it!</strong></div>";celebration.setAttribute('aria-hidden','true');document.body.append(celebration);
+  let enabled=false,audio;button.onclick=()=>{enabled=!enabled;button.textContent=enabled?'Sound on':'Turn sound on';button.setAttribute('aria-pressed',String(enabled));if(enabled){const Audio=window.AudioContext||window.webkitAudioContext;if(Audio){audio=audio||new Audio();audio.resume()}}};
+  function beep(frequency){if(!enabled||!audio)return;const tone=audio.createOscillator(),gain=audio.createGain();tone.connect(gain);gain.connect(audio.destination);tone.frequency.value=frequency;gain.gain.setValueAtTime(.08,audio.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.15);tone.start();tone.stop(audio.currentTime+.16)}
+  window.addEventListener('sprout:point',()=>beep(660));window.addEventListener('sprout:success',()=>{celebration.classList.add('show');beep(880);setTimeout(()=>celebration.classList.remove('show'),1800)});
+})();
+</script>
+<script>
+/* --- Demo recording driver (NOT product code): auto-starts the game and moves the
+       basket by reading star pixels off the canvas, so screen recordings show real
+       gameplay without a human at the keyboard. --- */
+(() => {
+  const canvas = document.getElementById('game');
+  addEventListener('load', () => { document.getElementById('start').click(); });
+  setInterval(() => {
+    const ctx = canvas.getContext('2d');
+    let bestX = 340, bestY = -1;
+    const data = ctx.getImageData(0, 0, 680, 340).data;
+    for (let y = 8; y < 300; y += 6) {
+      for (let x = 24; x < 656; x += 8) {
+        const i = (y * 680 + x) * 4;
+        if (data[i] > 225 && data[i + 1] > 185 && data[i + 2] < 160 && y > bestY) { bestY = y; bestX = x; }
+      }
+    }
+    const rect = canvas.getBoundingClientRect();
+    canvas.dispatchEvent(new PointerEvent('pointermove', {
+      clientX: rect.left + (bestX / 680) * rect.width,
+      clientY: rect.top + 40,
+      bubbles: true
+    }));
+  }, 90);
+})();
+</script>
+</body>
+</html>
