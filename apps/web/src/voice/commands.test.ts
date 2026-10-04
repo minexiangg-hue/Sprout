@@ -43,6 +43,21 @@ describe("parseCommand", () => {
     expect(parseCommand("规划", "zh-CN")).toEqual({ type: "planning-needs-prompt" });
   });
 
+  it("maps canvas mode triggers", () => {
+    expect(parseCommand("3d视图", "zh-CN")).toMatchObject({
+      type: "command",
+      parsed: { command: { kind: "canvas-mode", mode: "3d" }, ack: "已切换到3D视图。" }
+    });
+    expect(parseCommand("切换2d", "zh-CN")).toMatchObject({
+      type: "command",
+      parsed: { command: { kind: "canvas-mode", mode: "2d" }, ack: "已切换到2D视图。" }
+    });
+    expect(parseCommand("switch to 3d", "en-US")).toMatchObject({
+      type: "command",
+      parsed: { command: { kind: "canvas-mode", mode: "3d" }, ack: "Switched to 3D view." }
+    });
+  });
+
   it("maps ai and system commands", () => {
     expect(parseCommand("扫描", "zh-CN")).toMatchObject({ type: "command", parsed: { command: { kind: "ai-scan" } } });
     expect(parseCommand("打开设置", "zh-CN")).toMatchObject({ type: "command", parsed: { command: { kind: "system", action: "settings" } } });
@@ -126,7 +141,17 @@ describe("resolveReviewTargetRunId", () => {
 
 describe("requiresProjectByKind", () => {
   it("covers every control command kind", () => {
-    const kinds = ["viewport", "ai-planning", "ai-scan", "ai-review", "ai-start-code", "auto-layout", "coding-control", "system"];
+    const kinds = [
+      "viewport",
+      "canvas-mode",
+      "ai-planning",
+      "ai-scan",
+      "ai-review",
+      "ai-start-code",
+      "auto-layout",
+      "coding-control",
+      "system"
+    ];
     for (const kind of kinds) {
       expect(requiresProjectByKind).toHaveProperty(kind);
     }

@@ -307,13 +307,17 @@ export type ExtensionFieldType = z.infer<typeof extensionFieldTypeSchema>;
 
 export const positionSchema = z.object({
   x: z.number(),
-  y: z.number()
+  y: z.number(),
+  z: z.number().optional()
 });
 
 export const sizeSchema = z.object({
   width: z.number().positive(),
   height: z.number().positive()
 });
+
+export type Position = z.infer<typeof positionSchema>;
+export type Size = z.infer<typeof sizeSchema>;
 
 export const sourceRangeSchema = z.object({
   path: z.string().nullable(),
@@ -1248,6 +1252,7 @@ export const controlCommandSchema = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("ai-review") }),
   z.object({ kind: z.literal("ai-start-code"), prompt: z.string().optional(), targetNodeId: z.string().optional() }),
   z.object({ kind: z.literal("auto-layout") }),
+  z.object({ kind: z.literal("canvas-mode"), mode: z.enum(["2d", "3d"]) }),
   z.object({ kind: z.literal("coding-control"), action: controlCommandCodingActionSchema }),
   z.object({ kind: z.literal("system"), action: controlCommandSystemActionSchema })
 ]);

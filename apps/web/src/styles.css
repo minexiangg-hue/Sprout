@@ -571,9 +571,73 @@ select {
 
 .canvas-panel {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   min-height: 0;
   background: var(--canvas-surface);
+}
+
+.canvas-mode-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--canvas-panel-bg);
+  border-bottom: 1px solid var(--canvas-panel-border);
+  z-index: 10;
+}
+
+.canvas-mode-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 28px;
+  padding: 0 12px;
+  color: var(--canvas-panel-text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.canvas-mode-tabs button:hover {
+  background: var(--surface-muted);
+}
+
+.canvas-mode-tabs button.active {
+  color: var(--canvas-panel-strong);
+  background: var(--accent-soft);
+  border-color: var(--accent-border);
+}
+
+.workspace-canvas-3d,
+.workspace-canvas-3d-empty,
+.canvas3d-loading {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.workspace-canvas-3d > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.workspace-canvas-3d-empty,
+.canvas3d-loading {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  color: var(--canvas-panel-text);
+  background: var(--canvas-surface);
+}
+
+.canvas3d-loading {
+  align-content: center;
 }
 
 .canvas-empty,

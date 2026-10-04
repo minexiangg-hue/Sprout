@@ -469,6 +469,7 @@ export async function interpretControlCommand(input: {
         '{"kind":"ai-review"}',
         '{"kind":"ai-start-code","prompt":"optional coding instruction"}',
         '{"kind":"auto-layout"}',
+        '{"kind":"canvas-mode","mode":"2d"|"3d"}',
         '{"kind":"coding-control","action":"pause"|"resume"|"cancel"}',
         '{"kind":"system","action":"settings"|"refresh"|"open-workspace"|"reset-workspace"}',
         '{"unknown":true}'

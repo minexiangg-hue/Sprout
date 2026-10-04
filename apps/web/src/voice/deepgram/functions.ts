@@ -100,6 +100,21 @@ export const DEEPGRAM_FUNCTIONS: DeepgramFunctionDefinition[] = [
     parameters: { type: "object", properties: {} },
   },
   {
+    name: "canvas_mode",
+    description: "Switch the canvas between 2D and 3D view.",
+    parameters: {
+      type: "object",
+      properties: {
+        mode: {
+          type: "string",
+          enum: ["2d", "3d"],
+          description: "The canvas view mode to switch to."
+        }
+      },
+      required: ["mode"]
+    },
+  },
+  {
     name: "viewport",
     description: "Adjust the canvas viewport.",
     parameters: {

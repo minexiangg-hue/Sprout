@@ -87,9 +87,11 @@ import type { MemberLayout } from "./components/WorkspaceCanvas";
 import { WorkspaceDialog } from "./components/WorkspaceDialog";
 import { SettingsPage } from "./components/SettingsPage";
 import {
+  getStoredCanvasMode,
   getStoredCanvasProjectId,
   getStoredCanvasScope,
   getStoredCanvasViewport,
+  rememberCanvasMode,
   rememberCanvasScope,
   rememberCanvasViewport,
   type CanvasViewport
@@ -157,6 +159,7 @@ export default function App() {
   const [workflowPreviewDirty, setWorkflowPreviewDirty] = useState(false);
   const [gitStatus, setGitStatus] = useState("");
   const [restoreViewport, setRestoreViewport] = useState<CanvasViewport | null | undefined>(undefined);
+  const [canvasMode, setCanvasMode] = useState<"2d" | "3d">(() => getStoredCanvasMode(getStoredCanvasProjectId()) ?? "2d");
   const [undoStack, setUndoStack] = useState<UndoEntry[]>([]);
   const undoStackRef = useRef<UndoEntry[]>([]);
   const undoingRef = useRef(false);
@@ -1691,6 +1694,10 @@ export default function App() {
     viewportControllerRef.current = controller;
   }, []);
 
+  const handleSetCanvasMode = useCallback((mode: "2d" | "3d") => {
+    setCanvasMode(mode);
+  }, []);
+
   const handleControlCommand = useCallback(
     async (command: ControlCommand, ack: string, language: VoiceLanguage): Promise<CommandResult | undefined> => {
       if (requiresProjectByKind[command.kind] && !selectedProjectId) {
@@ -1724,6 +1731,7 @@ export default function App() {
         refresh: handleRefresh,
         openSettings: () => setSettingsOpen(true),
         resetWorkspace: handleResetSelfWorkspace,
+        setCanvasMode: handleSetCanvasMode,
         viewport: (action, direction) => {
           if (action === "show-full") {
             void handleShowFullGraph();
@@ -1794,10 +1802,26 @@ export default function App() {
     document.documentElement.dataset.theme = settings?.general.theme ?? "system";
   }, [settings?.general.theme]);
 
+  useEffect(() => {
+    setCanvasMode((current) => getStoredCanvasMode(selectedProjectId) ?? current);
+  }, [selectedProjectId]);
+
+  useEffect(() => {
+    if (selectedProjectId) {
+      rememberCanvasMode(selectedProjectId, canvasMode);
+    }
+  }, [canvasMode, selectedProjectId]);
+
+  useEffect(() => {
+    viewportControllerRef.current = null;
+  }, [canvasMode]);
+
   return (
     <>
       <AppShell
         selectedProject={selectedProject}
+        canvasMode={canvasMode}
+        onCanvasModeChange={handleSetCanvasMode}
         indexState={indexState}
         hierarchy={hierarchy}
         canvas={canvas}

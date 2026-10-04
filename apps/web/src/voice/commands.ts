@@ -78,8 +78,8 @@ export const contextFeedback = {
 export function helpText(language: VoiceLanguage): string {
   return lang(
     language,
-    "可用的语音命令：放大、缩小、适应视图、回到根、上移、下移、左移、右移、自动布局、规划加内容、扫描、审查、开始编码、暂停、继续、取消、打开设置、刷新、打开工作区、重置工作区、停止。",
-    "Available voice commands: zoom in, zoom out, fit view, back to root, pan, auto layout, plan, scan, review, start coding, pause, resume, cancel, settings, refresh, open workspace, reset workspace, and stop."
+    "可用的语音命令：放大、缩小、适应视图、回到根、上移、下移、左移、右移、自动布局、切换2D/3D视图、规划加内容、扫描、审查、开始编码、暂停、继续、取消、打开设置、刷新、打开工作区、重置工作区、停止。",
+    "Available voice commands: zoom in, zoom out, fit view, back to root, pan, auto layout, switch to 2D or 3D view, plan, scan, review, start coding, pause, resume, cancel, settings, refresh, open workspace, reset workspace, and stop."
   );
 }
 
@@ -147,7 +147,21 @@ export function parseCommand(input: string, language: VoiceLanguage): ParseResul
     return { type: "command", parsed: build({ kind: "auto-layout" }, lang(language, "已自动布局。", "Auto layout done.")) };
   }
 
-  // 3. viewport
+  // 3. canvas mode
+  const to3d = matches(text, ["3d视图", "切换3d", "三维视图", "switch to 3d", "3d view"]);
+  const to2d = matches(text, ["2d视图", "切换2d", "switch to 2d", "2d view"]);
+  if (to3d || to2d) {
+    const mode = to3d ? "3d" : "2d";
+    return {
+      type: "command",
+      parsed: build(
+        { kind: "canvas-mode", mode },
+        lang(language, `已切换到${mode === "3d" ? "3D" : "2D"}视图。`, `Switched to ${mode.toUpperCase()} view.`)
+      )
+    };
+  }
+
+  // 4. viewport
   const viewport = parseViewport(text, language);
   if (viewport) {
     return { type: "command", parsed: viewport };

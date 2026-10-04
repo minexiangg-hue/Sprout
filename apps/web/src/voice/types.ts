@@ -46,6 +46,7 @@ export type ParsedCommand = {
 
 export const requiresProjectByKind: Record<ControlCommand["kind"], boolean> = {
   viewport: true,
+  "canvas-mode": true,
   "ai-planning": true,
   "ai-scan": true,
   "ai-review": true,

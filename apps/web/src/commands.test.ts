@@ -26,6 +26,7 @@ function createFakeDeps() {
     refresh: vi.fn().mockResolvedValue(undefined),
     openSettings: vi.fn(),
     resetWorkspace: vi.fn().mockResolvedValue(undefined),
+    setCanvasMode: vi.fn(),
     viewport: vi.fn()
   };
 }
@@ -60,6 +61,7 @@ describe("command center", () => {
         "apply",
         "git_status",
         "auto_layout",
+        "canvas_mode",
         "viewport",
         "coding_control"
       ])
@@ -147,6 +149,15 @@ describe("command center", () => {
     expect(result.summary).toBe("已自动布局");
   });
 
+  it("switches canvas mode after sync", async () => {
+    const deps = createFakeDeps();
+    syncCommandCenter(deps, createSnapshot());
+    const result = await runCommand("canvas_mode", { mode: "3d" });
+    expect(result.ok).toBe(true);
+    expect(deps.setCanvasMode).toHaveBeenCalledWith("3d");
+    expect(result.summary).toBe("已切换到3D视图");
+  });
+
   it("auto layout guards missing project", async () => {
     const deps = createFakeDeps();
     syncCommandCenter(deps, createSnapshot({ projectId: null }));
@@ -171,6 +182,7 @@ describe("control command mapping", () => {
   it("maps all ControlCommand kinds", () => {
     const cases: { input: Parameters<typeof controlCommandToInvocation>[0]; expected: string }[] = [
       { input: { kind: "viewport", action: "zoom-in" }, expected: "viewport" },
+      { input: { kind: "canvas-mode", mode: "3d" }, expected: "canvas_mode" },
       { input: { kind: "ai-planning", prompt: "plan" }, expected: "plan" },
       { input: { kind: "ai-scan" }, expected: "scan" },
       { input: { kind: "ai-review" }, expected: "review" },

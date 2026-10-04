@@ -31,6 +31,7 @@ export type CommandDeps = {
   refresh: () => Promise<void>;
   openSettings: () => void;
   resetWorkspace: () => Promise<void>;
+  setCanvasMode: (mode: "2d" | "3d") => void;
   viewport: (action: "zoom-in" | "zoom-out" | "fit" | "show-full" | "pan", direction?: "up" | "down" | "left" | "right") => void;
 };
 
@@ -296,6 +297,17 @@ registerCommand({
     const deps = requireDeps();
     await deps.autoLayout();
     return { ok: true, summary: "已自动布局" };
+  }
+});
+
+registerCommand({
+  name: "canvas_mode",
+  description: "切换 2D/3D 画布视图",
+  argsSchema: z.object({ mode: z.enum(["2d", "3d"]) }),
+  async run(_ctx, args) {
+    const deps = requireDeps();
+    deps.setCanvasMode(args.mode);
+    return { ok: true, summary: args.mode === "3d" ? "已切换到3D视图" : "已切换到2D视图" };
   }
 });
 

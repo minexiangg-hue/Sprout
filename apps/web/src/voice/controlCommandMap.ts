@@ -4,6 +4,8 @@ export function controlCommandToInvocation(command: ControlCommand): { name: str
   switch (command.kind) {
     case "viewport":
       return { name: "viewport", args: { action: command.action, direction: command.direction } };
+    case "canvas-mode":
+      return { name: "canvas_mode", args: { mode: command.mode } };
     case "ai-planning":
       return { name: "plan", args: { prompt: command.prompt } };
     case "ai-scan":
